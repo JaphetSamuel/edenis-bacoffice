@@ -22,6 +22,7 @@
 
                         <form action="{{ route('packs.achat') }}" method="post">
                             @csrf
+
                             <div>
                                 <x-input-label for="pack" :value="__('Pack')" />
                                 <select name="pack_id" id="pack" class="mt-1 block w-full">
