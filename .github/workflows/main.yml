@@ -2,7 +2,7 @@ name: Full CI process for laravel 8
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   web-deploy:
     name: 🎉 Deploy
