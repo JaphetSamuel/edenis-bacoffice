@@ -10,6 +10,7 @@ use App\Models\Pack;
 use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ValidationAchatPack extends Controller
 {
@@ -51,6 +52,7 @@ class ValidationAchatPack extends Controller
 
         // notification event
         // $user->notify(new \App\Notifications\AchatPack($transaction));
-        dd($transaction);
+
+        return Redirect::route('dashboard', ['message' => 'Achat effectué avec succès']);
     }
 }

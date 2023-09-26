@@ -22,7 +22,6 @@ class TransactionController extends Controller
      */
     public function create(TransactionRequest $request)
     {
-        dd($request->validated());
         $transaction = Transaction::create($request->validated());
     }
 
