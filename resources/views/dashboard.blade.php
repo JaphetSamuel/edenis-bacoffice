@@ -4,12 +4,22 @@
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Dashboard') }}
         </h2>
-        <div class="flex justify-end h-32 w-32">
-            <x-primary-button >
-                <a href="{{route('packs.create')}}">
-                    {{ __('Buy packs') }}
-                </a>
-            </x-primary-button>
+
+
+        <div class="">
+{{--            <div class="flex justify-start align-center basis-3/4">--}}
+{{--                <x-secondary-button class="bg-red"> Inscription </x-secondary-button>------}}
+{{--                <x-primary-button > KYC </x-primary-button>------}}
+{{--                <x-primary-button > Paiement </x-primary-button>------}}
+{{--                <x-primary-button > Affiliation </x-primary-button>--}}
+{{--            </div>--}}
+            <div class="flex justify-end h-32 w-32 basis-1/4">
+                <x-primary-button >
+                    <a href="{{route('packs.create')}}">
+                        {{ __('Buy packs') }}
+                    </a>
+                </x-primary-button>
+            </div>
         </div>
 
     </x-slot>

@@ -34,4 +34,8 @@ Route::post('/packs/achat', \App\Http\Controllers\ValidationAchatPack::class)->n
 
 Route::resource('packs', \App\Http\Controllers\Pack\PackController::class);
 
+// KYC
+Route::resource('kyc', \App\Http\Controllers\KYCController::class)
+->middleware(['auth', 'verified']);
+
 require __DIR__.'/auth.php';
