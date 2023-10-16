@@ -38,4 +38,8 @@ Route::resource('packs', \App\Http\Controllers\Pack\PackController::class);
 Route::resource('kyc', \App\Http\Controllers\KYCController::class)
 ->middleware(['auth', 'verified']);
 
+Route::get('guest2', function () {
+    return view('layouts/guest2');
+});
+
 require __DIR__.'/auth.php';
