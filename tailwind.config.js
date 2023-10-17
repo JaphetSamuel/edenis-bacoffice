@@ -21,14 +21,14 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
-            colors: {
-                'primary': '#FDD85D',
-                'on-primary': '#000000',
-                'secondary': '#202020',
-                'on-secondary': '#FFFFFF',
-                'danger': '#E3342F',
-                'success': '#38C172',
-            }
+            // colors: {
+            //     'primary': '#FDD85D',
+            //     'on-primary': '#000000',
+            //     'secondary': '#202020',
+            //     'on-secondary': '#FFFFFF',
+            //     'danger': '#E3342F',
+            //     'success': '#38C172',
+            // }
         },
     },
 

@@ -74,4 +74,6 @@ class User extends Authenticatable
         $this->parrain_code = $code;
         $this->save();
     }
+
+
 }
