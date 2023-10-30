@@ -9,7 +9,7 @@
         @csrf
         {{ $this->form }}
 
-        <button type="submit">
+        <button type="submit" class="bg-gray bg-primary bg-secondary">
             Submit
         </button>
     </form>

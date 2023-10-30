@@ -7,6 +7,7 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Forms;
 use Filament\Notifications\Notification;
+use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
 use App\Enums;
 use App\Models\Kyc;
@@ -96,5 +97,6 @@ class KycForm extends Component implements HasForms
             ->title('KYC')
             ->body('KYC created successfully')
             ->send();
+        Redirect::route('dash');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actions\Remunerations\CommissionParainage;
+use App\Enums\Etapes;
 use App\Enums\TransactionStatus;
 use App\Enums\TransactionType;
 use App\Http\Requests\AchatPackRequest;
@@ -49,6 +50,13 @@ class ValidationAchatPack extends Controller
         $pack->update([
             'quantite' => $pack->quantite - $validated['quantite']
         ]);
+
+//       mise à jour de l'état
+        if($user->etape < Etapes::PACK){
+            $user->update([
+                'etape' => Etapes::PACK
+            ]);
+        }
 
         // notification event
         // $user->notify(new \App\Notifications\AchatPack($transaction));

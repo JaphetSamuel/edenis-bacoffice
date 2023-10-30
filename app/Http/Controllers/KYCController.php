@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Livewire\KycForm;
 use Illuminate\Http\Request;
 
 class KYCController extends Controller
@@ -12,18 +13,6 @@ class KYCController extends Controller
     public function index()
     {
         //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return view('modules.KYC.document-edit',
-            [
-                'user' => auth()->user()
-            ]
-        );
     }
 
     /**

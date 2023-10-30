@@ -75,5 +75,9 @@ class User extends Authenticatable
         $this->save();
     }
 
+    public function allName(){
+        return $this->name . ' ' . $this->lastname;
+    }
+
 
 }

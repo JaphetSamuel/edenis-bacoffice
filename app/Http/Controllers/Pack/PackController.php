@@ -32,7 +32,8 @@ class PackController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //after ValidationAchatPack
+        dd($request->all());
     }
 
     /**

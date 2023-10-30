@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/dashboard1', function () {
     return view('dashboard', [
         'user' => auth()->user()
     ]);
@@ -35,11 +36,12 @@ Route::post('/packs/achat', \App\Http\Controllers\ValidationAchatPack::class)->n
 Route::resource('packs', \App\Http\Controllers\Pack\PackController::class);
 
 // KYC
-Route::resource('kyc', \App\Http\Controllers\KYCController::class)
-->middleware(['auth', 'verified']);
-
-Route::get('guest2', function () {
-    return view('layouts/guest2');
+Route::middleware(['auth', 'verified'])->group(function (){
+    Route::get('/kyc/create', \App\Livewire\KycForm::class)->name('kyc.create');
 });
+
+
+Route::get('/dashboard', [DashController::class, 'index'])
+    ->name('dash')->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
