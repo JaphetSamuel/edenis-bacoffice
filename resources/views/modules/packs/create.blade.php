@@ -27,31 +27,19 @@
                                 <form action="{{ route('packs.achat') }}" method="post">
                                     @csrf
 
-                                    <div>
-                                        <x-input-label for="pack" :value="__('Pack')" />
-                                        <select name="pack_id" id="pack" class="mt-1 block w-full">
-                                            @foreach ($packs as $pack)
-                                                <option value="{{ $pack->id }}">{{ $pack->libelle }} - {{ $pack->prix }} €</option>
-                                            @endforeach
-                                        </select>
-                                        <x-input-error class="mt-2" :messages="$errors->get('name')" />
-                                    </div>
-                                    @foreach($packs as $pack)
-                                        <input type="radio" name="pack_id" value="{{$pack->id}}" id="radio_{{$pack->id}}">
-                                        <label>
-                                            <div class="col-sm-4">
-                                                <div class="position-relative p-3 bg-gray" style="height: 180px">
-                                                    <div class="ribbon-wrapper ribbon-xl">
-                                                        <div class="ribbon bg-warning text-lg">
-                                                            {{$pack->libelle}}
-                                                        </div>
-                                                    </div>
-                                                    Ribbon Extra Large <br> {{$pack->prix}} <br>
-                                                    <small>.ribbon-wrapper.ribbon-xl .ribbon.text-lg</small>
-                                                </div>
-                                            </div>
-                                        </label>
-                                    @endforeach
+                                   <div class="row">
+                                       @foreach($packs as $pack)
+                                           <div class="info-box mb-3 bg-warning">
+                                               <span class="info-box-icon"><i class="fas fa-tag"></i></span>
+
+                                               <div class="info-box-content">
+                                                   <span class="info-box-text">{{$pack->libelle}}</span>
+                                                   <span class="info-box-number">{{$pack->prix}}</span>
+                                               </div>
+                                               <!-- /.info-box-content -->
+                                           </div>
+                                       @endforeach
+                                   </div>
 
                                     <div>
                                         <x-input-label for="quantite" :value="__('Quantity')" />

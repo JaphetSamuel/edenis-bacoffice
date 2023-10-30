@@ -10,8 +10,7 @@
   <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('dist/css/adminlte.css')}}">
-    @push('styles')
-    @endpush
+    @yield('css')
 </head>
 <body class="hold-transition sidebar-mini dark-mode">
 <!-- Site wrapper -->
@@ -124,5 +123,6 @@
 <script src="{{ asset('/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 {{--<script src="{{ asset('/dist/js/demo.js')}}"></script>--}}
+@yield('scripts')
 </body>
 </html>
