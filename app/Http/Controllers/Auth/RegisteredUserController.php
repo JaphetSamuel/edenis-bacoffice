@@ -68,6 +68,6 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        return redirect(Route::getRoutes()->getByName('verification.send')->uri());
+        return redirect(Route::getRoutes()->getByName('verification.notice')->uri());
     }
 }
