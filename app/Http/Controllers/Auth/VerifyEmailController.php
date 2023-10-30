@@ -21,7 +21,7 @@ class VerifyEmailController extends Controller
         }
 
         if ($request->user()->markEmailAsVerified()) {
-            $request->user->update([
+            $request->user()->update([
                 'etape' => Etapes::VERIFIE,
             ]);
             event(new Verified($request->user()));
