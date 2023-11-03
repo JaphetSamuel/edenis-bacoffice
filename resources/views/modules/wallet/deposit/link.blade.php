@@ -10,6 +10,8 @@
 
                 <div class="card-body row">
                     <div class="col-6">
+                        <p>Amount : {{$transaction->montant}}</p>
+
                         payment address  <code class="ml-2">{{$payment_address}}</code>
 
                         <p>

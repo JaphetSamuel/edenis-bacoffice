@@ -38,10 +38,11 @@ class DepositViewController extends Controller
     public function displayPaymentlink(Request $request)
     {
         $payment_link = $this->generatePaymentToken();
+        $transaction = Transaction::first($request->get('transaction_id'))->first();
         return view('modules.wallet.deposit.link',[
             'payment_link' => 'https://link.trustwallet.com/send?coin=0&address=bc1qjfudrhgxnya48xvy6nzlcw0c2xt653xnl954cr',
             'payment_address'=>'bc1qjfudrhgxnya48xvy6nzlcw0c2xt653xnl954cr',
-            'transaction_id'=>$request->get('transaction_id'),
+            'transaction'=>$transaction,
             'method'=>$request->get('payment_method')
         ]);
     }
