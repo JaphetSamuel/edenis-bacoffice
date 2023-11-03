@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\wallet\DepositViewController;
+use App\Http\Controllers\wallet\TransactionViewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashController;
 
@@ -43,5 +45,24 @@ Route::middleware(['auth', 'verified'])->group(function (){
 
 Route::get('/dashboard', [DashController::class, 'index'])
     ->name('dash')->middleware(['auth', 'verified']);
+
+
+//TransactionView
+Route::middleware(['auth'])->group(function(){
+   Route::get('/transaction', [TransactionViewController::class, 'index'])->name('transaction.list');
+});
+
+//DepositView
+Route::middleware(['auth'])->group(function(){
+    Route::get('/deposit', [DepositViewController::class, 'index'])->name('deposit.index');
+    Route::get('/deposit/link', [DepositViewController::class,'displayPaymentlink'])->name('deposit.link');
+    Route::post('/deposit', [DepositViewController::class, 'store'])->name('deposit.store');
+});
+
+//NetworkView
+
+//PackageView
+
+//WithdrawView
 
 require __DIR__.'/auth.php';

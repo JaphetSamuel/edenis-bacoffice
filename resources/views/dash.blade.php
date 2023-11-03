@@ -56,7 +56,7 @@
             <div class="small-box bg-primary text-gray-dark">
                 <div class="inner">
                     <h3>
-                        {{$user->portefeuille->solde}}
+                        {{$user->portefeuille->solde ?? 0}}
                     </h3>
                     <p>Balance</p>
                 </div>
@@ -71,7 +71,7 @@
             <div class="small-box bg-primary text-gray-dark">
                 <div class="inner">
                     <h3>
-                        {{$user->portefeuille->titres}}
+                        {{$user->portefeuille->titres ?? 0}}
                     </h3>
                     <p>Number of pack</p>
                 </div>

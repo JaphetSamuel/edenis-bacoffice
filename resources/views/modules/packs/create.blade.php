@@ -29,12 +29,12 @@
 
                                    <div class="row">
                                        @foreach($packs as $pack)
-                                           <div class="info-box mb-3 bg-warning">
+                                           <div class="info-box mb-3 bg-primary col-lg-3 col-12">
                                                <span class="info-box-icon"><i class="fas fa-tag"></i></span>
 
                                                <div class="info-box-content">
                                                    <span class="info-box-text">{{$pack->libelle}}</span>
-                                                   <span class="info-box-number">{{$pack->prix}}</span>
+                                                   <span class="info-box-number">{{$pack->prix}} USD</span>
                                                </div>
                                                <!-- /.info-box-content -->
                                            </div>
