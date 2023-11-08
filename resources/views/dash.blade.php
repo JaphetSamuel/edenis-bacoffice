@@ -5,13 +5,13 @@
         <div class="col-12 row justify-content-center mb-3">
             <div class="col-sm-4 col-md-2">
                 <div class="color-palette-set">
-                    <div class="bg-primary color-palette"><h4 class="text-center text-gray-dark">Inscription</h4></div>
+                    <div class="bg-primary color-palette"><h5 class="text-center text-gray-dark">Inscription</h5></div>
                     <div class="bg-success disabled color-palette"><span>Passed</span></div>
                 </div>
             </div>
             <div class="col-sm-4 col-md-2">
                 <div class="color-palette-set">
-                    <div class="bg-primary color-palette"><h4 class="text-center text-gray-dark">Confirmation</h4></div>
+                    <div class="bg-primary color-palette"><h5 class="text-center text-gray-dark">Confirmation</h5></div>
                     @if($user->etape >= \App\Enums\Etapes::VERIFIE)
                         <div class="bg-success disabled color-palette"><span>Passed</span></div>
                     @else
@@ -21,7 +21,7 @@
             </div>
             <div class="col-sm-4 col-md-2">
                 <div class="color-palette-set">
-                    <div class="bg-primary color-palette"><h4 class="text-center text-gray-dark">KYC</h4></div>
+                    <div class="bg-primary color-palette"><h5 class="text-center text-gray-dark">KYC</h5></div>
                     @if($user->etape >= \App\Enums\Etapes::KYC)
                         <div class="bg-success disabled color-palette"><span>Passed</span></div>
                     @else
@@ -31,7 +31,7 @@
             </div>
             <div class="col-sm-4 col-md-2">
                 <div class="color-palette-set">
-                    <div class="bg-primary color-palette"><h4 class="text-center text-gray-dark">Payement</h4></div>
+                    <div class="bg-primary color-palette"><h5 class="text-center text-gray-dark">Payement</h5></div>
                     @if($user->etape >= \App\Enums\Etapes::PACK)
                         <div class="bg-success disabled color-palette"><span>Passed</span></div>
                     @else
@@ -41,7 +41,7 @@
             </div>
             <div class="col-sm-4 col-md-2">
                 <div class="color-palette-set">
-                    <div class="bg-primary color-palette"><h4 class="text-center text-gray-dark">Signature</h4></div>
+                    <div class="bg-primary color-palette"><h5 class="text-center text-gray-dark">Signature</h5></div>
                     @if($user->etape >= \App\Enums\Etapes::SIGNED)
                         <div class="bg-success disabled color-palette"><span>Passed</span></div>
                     @else
