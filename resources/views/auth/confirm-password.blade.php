@@ -18,7 +18,7 @@
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
-        <div class="flex justify-end mt-4">
+        <div class="flex justify-end mt-4" style="width: 200px!important; color: #1a202c !important;background-color: #FDD85D !important; text-align: center">
             <x-primary-button>
                 {{ __('Confirm') }}
             </x-primary-button>

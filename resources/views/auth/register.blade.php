@@ -83,7 +83,7 @@
                     {{ __('Already registered?') }}
                 </a>
 
-                <x-primary-button class="ml-4 bg-primary text-xl" style="width: 200px!important; color: #1a202c !important; text-align: center">
+                <x-primary-button class="ml-4 bg-primary text-xl" style="width: 200px!important; color: #1a202c !important; text-align: center;background-color: #FDD85D !important;">
                     {{ __('Register') }}
                 </x-primary-button>
             </div>
