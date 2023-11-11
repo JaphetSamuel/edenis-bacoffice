@@ -4,7 +4,7 @@
 @section('content')
     <section class="content">
             <x-slot name="header">
-                <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                     {{ __('Pack purchase') }}
                 </h2>
             </x-slot>
@@ -29,12 +29,12 @@
 
                                    <div class="row">
                                        @foreach($packs as $pack)
-                                           <div class="info-box mb-3 bg-primary col-lg-3 col-12">
-                                               <span class="info-box-icon"><i class="fas fa-tag"></i></span>
+                                           <div class="info-box mb-3 mx-2 bg-primary col-lg-3 col-12">
+                                               <span class="info-box-icon"><i class="fas fa-tag text-gray-dark"></i></span>
 
                                                <div class="info-box-content">
-                                                   <span class="info-box-text">{{$pack->libelle}}</span>
-                                                   <span class="info-box-number">{{$pack->prix}} USD</span>
+                                                   <span class="info-box-text text-gray-dark">{{$pack->libelle}}</span>
+                                                   <span class="info-box-number text-gray-dark text-xl">{{$pack->prix}} USD</span>
                                                </div>
                                                <!-- /.info-box-content -->
                                            </div>
@@ -49,7 +49,9 @@
 
                                     <input type="hidden" name="user_id" value="{{ $user->id }}">
 
-                                    <x-primary-button class="mt-2">{{ __('Save') }}</x-primary-button>
+                                    <x-primary-button class="mt-2 text-md"
+                                                      style="width: 200px!important; color: #1a202c !important; text-align: center;background-color: #FDD85D !important;"
+                                    >{{ __('Save') }}</x-primary-button>
                                 </form>
                             </section>
                         </div>
