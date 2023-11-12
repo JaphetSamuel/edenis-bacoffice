@@ -7,12 +7,14 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Forms;
 use Filament\Notifications\Notification;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
 use App\Enums;
 use App\Models\Kyc;
 use Livewire\WithFileUploads;
+use Saade\FilamentAutograph\Forms\Components\Enums\DownloadableFormat;
 use Saade\FilamentAutograph\Forms\Components\SignaturePad;
 use function Termwind\style;
 
@@ -76,16 +78,20 @@ class KycForm extends Component implements HasForms
                             ])
                             ->required(),
                         Forms\Components\FileUpload::make('piece_identite')
+                            ->multiple()
                             ->image()
                             ->required(),
 
                         Forms\Components\TextInput::make('numero_piece_identite')
                             ->required(),
                         Forms\Components\FileUpload::make('photo')->image()->required(),
-
-                        Forms\Components\FileUpload::make('signature')
-                            ->image()
-                            ->required(),
+                        SignaturePad::make('signature')
+                            ->downloadableFormats([DownloadableFormat::PNG])
+                            ->backgroundColor('white')
+                            ->downloadable()
+                            ->filename(function (Kyc $data) {
+                                return $data['nom'] . '-' . $data['prenom'] . '-signature.png';
+                            })
                     ])->columnSpan('full')
                 ])->columnSpan('full'),
             ])
@@ -94,11 +100,12 @@ class KycForm extends Component implements HasForms
 
     public function  create(): void
     {
+
         $this->validate();
         Kyc::create($this->form->getState());
         $user = auth()->user();
         $user->kyc = true;
-        $user->etape = 3;
+        $user->etape = 2;
         $user->save();
         Notification::make()
             ->title('KYC')

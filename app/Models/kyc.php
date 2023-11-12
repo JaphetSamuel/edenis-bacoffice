@@ -26,9 +26,18 @@ class kyc extends Model
         'user_id',
     ];
 
+    protected $casts = [
+        'date_naissance' => 'date',
+        'piece_identite' => 'array',
+        'photo' => 'array',
+        'signature' => 'array',
+    ];
+
     public function save(array $options = [])
     {
         $this->user_id = auth()->user()->id;
+        // convert to base64
+        $this->signature = 'null';
         return parent::save($options);
     }
 
