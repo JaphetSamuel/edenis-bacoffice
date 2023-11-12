@@ -93,6 +93,10 @@ class KycForm extends Component implements HasForms
     {
         $this->validate();
         Kyc::create($this->form->getState());
+        $user = auth()->user();
+        $user->kyc = true;
+        $user->etape = 3;
+        $user->save();
         Notification::make()
             ->title('KYC')
             ->body('KYC created successfully')
