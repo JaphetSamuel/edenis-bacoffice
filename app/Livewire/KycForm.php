@@ -22,6 +22,8 @@ class KycForm extends Component implements HasForms
     use InteractsWithForms;
     use WithFileUploads;
 
+
+
     public  ?array $data = [];
 
     public function mount(){
@@ -101,7 +103,7 @@ class KycForm extends Component implements HasForms
     {
 
         $this->validate();
-        Kyc::create($this->form->getState());
+        kyc::create($this->form->getState());
         $user = auth()->user();
         $user->kyc = true;
         $user->etape = 2;

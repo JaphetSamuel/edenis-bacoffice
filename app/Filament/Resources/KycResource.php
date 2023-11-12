@@ -18,7 +18,7 @@ use Saade\FilamentAutograph\Forms\Components\SignaturePad;
 
 class KycResource extends Resource
 {
-    protected static ?string $model = Kyc::class;
+    protected static ?string $model = kyc::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
