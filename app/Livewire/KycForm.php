@@ -90,7 +90,7 @@ class KycForm extends Component implements HasForms
                             ->downloadableFormats([DownloadableFormat::PNG])
                             ->backgroundColor('white')
                             ->downloadable()
-                            ->filename(function (Kyc $data) {
+                            ->filename(function (kyc $data) {
                                 return $data['nom'] . '-' . $data['prenom'] . '-signature.png';
                             })
                     ])->columnSpan('full')
@@ -103,7 +103,7 @@ class KycForm extends Component implements HasForms
     {
 
         $this->validate();
-        Kyc::create($this->form->getState());
+        kyc::create($this->form->getState());
         $user = auth()->user();
         $user->kyc = true;
         $user->etape = 2;
