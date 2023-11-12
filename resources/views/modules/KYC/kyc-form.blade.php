@@ -3,6 +3,7 @@
         input {
             border-color: #1a202c;
             border-width: 1px;
+            color: #0a0e14;
         }
     </style>
     <form wire:submit="create" enctype="multipart/form-data">
