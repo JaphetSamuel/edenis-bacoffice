@@ -23,19 +23,15 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required(),
+                Forms\Components\TextInput::make('name'),
                 Forms\Components\TextInput::make('email')
-                    ->email()
-                    ->required(),
+                    ->email(),
                 Forms\Components\DateTimePicker::make('email_verified_at'),
                 Forms\Components\TextInput::make('password')
-                    ->password()
-                    ->required(),
+                    ->password(),
                 Forms\Components\TextInput::make('phone')
                     ->tel(),
-                Forms\Components\Toggle::make('is_active')
-                    ->required(),
+                Forms\Components\Toggle::make('is_active'),
                 Forms\Components\TextInput::make('parrain_id')
                     ->numeric(),
                 Forms\Components\TextInput::make('parrain_code'),
@@ -95,14 +91,14 @@ class UserResource extends Resource
                 Tables\Actions\CreateAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -111,5 +107,5 @@ class UserResource extends Resource
             'view' => Pages\ViewUser::route('/{record}'),
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
-    }    
+    }
 }
