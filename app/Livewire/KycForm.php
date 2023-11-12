@@ -7,7 +7,6 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Forms;
 use Filament\Notifications\Notification;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
