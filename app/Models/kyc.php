@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class kyc extends Model
+class Kyc extends Model
 {
     protected $fillable = [
         'nom',
