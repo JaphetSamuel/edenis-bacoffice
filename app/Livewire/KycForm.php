@@ -7,12 +7,14 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Forms;
 use Filament\Notifications\Notification;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
 use App\Enums;
 use App\Models\Kyc;
 use Livewire\WithFileUploads;
 use Saade\FilamentAutograph\Forms\Components\SignaturePad;
+use function Termwind\style;
 
 class KycForm extends Component implements HasForms
 {
@@ -37,6 +39,7 @@ class KycForm extends Component implements HasForms
                 Forms\Components\Wizard::make([
                     Forms\Components\Wizard\Step::make('User Information')->schema([
                         Forms\Components\TextInput::make('nom')
+                            ->extraAttributes(['style' => 'color: black'])
                             ->required(),
                         Forms\Components\TextInput::make('prenom')
                             ->required(),
@@ -101,6 +104,6 @@ class KycForm extends Component implements HasForms
             ->title('KYC')
             ->body('KYC created successfully')
             ->send();
-        Redirect::route('dash');
+        $this->redirectRoute('dash');
     }
 }
