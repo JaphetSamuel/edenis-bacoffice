@@ -11,7 +11,7 @@ use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
 use App\Enums;
-use App\Models\Kyc;
+use App\Models\kyc;
 use Livewire\WithFileUploads;
 use Saade\FilamentAutograph\Forms\Components\Enums\DownloadableFormat;
 use Saade\FilamentAutograph\Forms\Components\SignaturePad;
