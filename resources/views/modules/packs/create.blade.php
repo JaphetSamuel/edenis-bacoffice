@@ -2,6 +2,17 @@
 
 
 @section('content')
+    <style>
+        .pack-radio:checked + label {
+            background-color: #f5f5f5 !important;
+            border-color: #ddd !important;
+        }
+
+        .pack-radio:checked + label:after {
+            background-color: #337ab7;
+            border-color: #337ab7;
+        }
+    </style>
     <section class="content">
             <x-slot name="header">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -29,21 +40,23 @@
 
                                    <div class="row">
                                        @foreach($packs as $pack)
-                                           <div class="info-box mb-3 mx-2 bg-primary col-lg-3 col-12">
-                                               <span class="info-box-icon"><i class="fas fa-tag text-gray-dark"></i></span>
+                                           <input type="radio" value="{{$pack->id}}" id="{{$pack->id}}" name="pack" class="pack-radio" hidden>
+                                           <label for="{{$pack->id}}" class="info-box mb-3 mx-2 bg-primary col-lg-3 col-12">
+                                                   <span class="info-box-icon"><i class="fas fa-tag text-gray-dark"></i></span>
 
-                                               <div class="info-box-content">
-                                                   <span class="info-box-text text-gray-dark">{{$pack->libelle}}</span>
-                                                   <span class="info-box-number text-gray-dark text-xl">{{$pack->prix}} USD</span>
-                                               </div>
-                                               <!-- /.info-box-content -->
-                                           </div>
+                                                   <div class="info-box-content">
+                                                       <span class="info-box-text text-gray-dark">{{$pack->libelle}}</span>
+                                                       <span class="info-box-number text-gray-dark text-xl">{{$pack->prix}} USD</span>
+                                                   </div>
+                                                   <!-- /.info-box-content -->
+
+                                           </label>
                                        @endforeach
                                    </div>
 
-                                    <div>
+                                    <div class="col-sm-12 col-md-3">
                                         <x-input-label for="quantite" :value="__('Quantity')" />
-                                        <x-text-input id="quantite" name="quantite" type="number" class="mt-1 block w-full" :value="old('quantite',0)" required />
+                                        <input class="form-control form-control-lg " type="number" placeholder="">
                                         <x-input-error class="mt-2" :messages="$errors->get('quantite')" />
                                     </div>
 
@@ -52,6 +65,10 @@
                                     <x-primary-button class="mt-2 text-md"
                                                       style="width: 200px!important; color: #1a202c !important; text-align: center;background-color: #FDD85D !important;"
                                     >{{ __('Save') }}</x-primary-button>
+
+                                    <a href="" class="btn btn-primary btn-lg text-gray-dark hover:text-white"> Solde:000000</a>
+
+
                                 </form>
                             </section>
                         </div>

@@ -5,7 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\KycResource\Pages;
 use App\Filament\Resources\KycResource\RelationManagers;
 use App\Enums;
-use App\Models\Kyc;
+use App\Models\kyc;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
