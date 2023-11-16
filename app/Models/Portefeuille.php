@@ -12,6 +12,8 @@ class Portefeuille extends Model
     protected $fillable = [
         'user_id',
         'solde',
+        'solde_depot',
+        'titres',
         'solde_reel',
         'titres'
     ];
@@ -25,6 +27,8 @@ class Portefeuille extends Model
     {
         return $this->hasMany(Transaction::class);
     }
+
+
 
 
 }

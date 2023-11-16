@@ -53,6 +53,21 @@ class DepositViewController extends Controller
         $hash = md5(rand(0, 1000));
         $token = substr($hash, 0, 20);
         return $token;
+    }
 
+    ///
+    /// Apres le paiement - le de redirection du service de paiement
+    public function confirmPayment(Request $request)
+    {
+        $user = auth()->user();
+
+        $transaction = Transaction::find($request->get('transaction_id'))->first();
+        $transaction->status = TransactionStatus::ACCEPTEE;
+        $transaction->save();
+
+        $user->portefeuille()->solde_depot += $request->get('amount');
+
+        $user->notify(new \App\Notifications\TransactionNotification($transaction));
+        return redirect()->route('wallet.index');
     }
 }

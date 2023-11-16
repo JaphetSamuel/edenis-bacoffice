@@ -23,7 +23,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('dash')}}" class="nav-link">Dashboard</a>
+        <a href="{{route('dash')}}" class="nav-link text-gray-dark text-bold border-info">Dashboard</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{route('kyc.create')}}" class="nav-link text-gray-dark text-bold border-info">KYC</a>
