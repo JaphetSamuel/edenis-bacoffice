@@ -25,14 +25,27 @@
                     <div class="p-4 sm:p-8 bg-gray-dark shadow sm:rounded-lg">
                         <div class="max-w-xl">
                             <section>
-                                <header>
-                                    <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                                        {{ __('Purchase Informations') }}
-                                    </h2>
+                                <header class="row">
+                                    <div class="col-12 col-lg-9">
+                                        <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+                                            {{ __('Purchase Informations') }}
+                                        </h2>
+                                        @if($errors->has('solde'))
+                                            <div class="alert alert-danger">
+                                                {{ $errors->first('solde') }}
 
-                                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                                        {{ __("Some advertising message") }}
-                                    </p>
+                                            </div>
+                                        @endif
+
+                                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                                            {{ __("Some advertising message") }}
+                                        </p>
+                                    </div>
+                                    <div class="col-12 col-lg-3">
+                                        Balance : {{ $portefeuille->solde_depot }} USD
+                                        <a class="btn btn-primary ml-3 text-gray-dark" href="{{route('deposit.index')}}"> Make a deposit </a>
+                                    </div>
+
                                 </header>
 
                                 <form action="{{ route('packs.achat') }}" method="post">
@@ -40,7 +53,7 @@
 
                                    <div class="row">
                                        @foreach($packs as $pack)
-                                           <input type="radio" value="{{$pack->id}}" id="{{$pack->id}}" name="pack" class="pack-radio" hidden>
+                                           <input type="radio" value="{{$pack->id}}" id="{{$pack->id}}" name="pack_id" class="pack-radio" required hidden>
                                            <label for="{{$pack->id}}" class="info-box mb-3 mx-2 bg-primary col-lg-3 col-12">
                                                    <span class="info-box-icon"><i class="fas fa-tag text-gray-dark"></i></span>
 
@@ -56,7 +69,7 @@
 
                                     <div class="col-sm-12 col-md-3">
                                         <x-input-label for="quantite" :value="__('Quantity')" />
-                                        <input class="form-control form-control-lg " type="number" placeholder="">
+                                        <input class="form-control form-control-lg " name="quantite" type="number" placeholder="">
                                         <x-input-error class="mt-2" :messages="$errors->get('quantite')" />
                                     </div>
 
@@ -66,7 +79,7 @@
                                                       style="width: 200px!important; color: #1a202c !important; text-align: center;background-color: #FDD85D !important;"
                                     >{{ __('Save') }}</x-primary-button>
 
-                                    <a href="" class="btn btn-primary btn-lg text-gray-dark hover:text-white"> Solde:000000</a>
+
 
 
                                 </form>
@@ -77,5 +90,7 @@
 
                 </div>
             </div>
+
+
     </section>
     @endsection

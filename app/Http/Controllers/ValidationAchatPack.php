@@ -25,7 +25,18 @@ class ValidationAchatPack extends Controller
         // declaration
         $pack = Pack::find($validated['pack_id']);
         $user = User::find($validated['user_id']);
+        $quantite = $validated['quantite'];
+
+        if($pack->quantite < $quantite){
+            return Redirect::back()->withErrors(['quantite' => 'Quantité insuffisante']);
+        }
+
         $portefeuille = $user->portefeuille;
+        $montant = $pack->prix * $quantite;
+
+        if($portefeuille->solde_depot < $montant){
+            return Redirect::back()->withErrors(['solde' => 'insufficient balance for purchase']);
+        }
 
 
         // creation de la transaction

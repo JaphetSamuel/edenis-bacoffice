@@ -20,10 +20,12 @@ class PackController extends Controller
      */
     public function create()
     {
+        $portefeuille = auth()->user()->portefeuille;
         // display formulaire d'achat de pack
         return view('modules.packs.create', [
             'packs' => \App\Models\Pack::all(),
             'user' => auth()->user(),
+            'portefeuille' => $portefeuille,
         ]);
     }
 
