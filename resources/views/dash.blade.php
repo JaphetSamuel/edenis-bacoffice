@@ -76,7 +76,7 @@
                     <p>Number of pack</p>
                 </div>
                 <div class="icon">
-                    <i class="fa fa-money"></i>
+                    <i class="fa fa-tag"></i>
                 </div>
             </div>
         </div>
@@ -90,7 +90,7 @@
                     <p>Deposit account</p>
                 </div>
                 <div class="icon">
-                    <i class="fa fa-money"></i>
+                    <i class="fa fa-download"></i>
                 </div>
             </div>
         </div>
