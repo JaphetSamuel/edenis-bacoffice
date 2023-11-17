@@ -19,7 +19,7 @@
             <form  method="post" action="{{route('bank-card.create')}}" id="card-form">
                 @csrf
                 <div class="card-body">
-                    <div class="payment-errors"></div>
+                    <div class="payment-errors alert-danger"></div>
 
                     <div class="form-group">
                         <label for="fullname"> Name on your card</label>

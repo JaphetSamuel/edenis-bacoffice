@@ -11,7 +11,7 @@ class StripeHelper
         $stripe = new \Stripe\StripeClient("sk_test_51K6NizJLGuTPl0hAY1olcBPjT1kUCjWAgLXi3Nf0gI21h2jnwMxWl7nEcFQtr7tqzkc6jaatZcZ3nRP1hCwCbQso00AyuoputN");
 
         $charge = $stripe->charges->create([
-            'amount' => $amount,
+            'amount' => $amount*100,
             'currency' => 'usd',
             'customer' => $user->stripe_customer_id,
             'description' => $description,
