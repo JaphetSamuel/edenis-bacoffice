@@ -10,7 +10,11 @@
   <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('dist/css/adminlte.css')}}">
-    @yield('css')
+
+    @stack('css')
+    @stack('styles')
+
+    <script src="{{ asset('/plugins/jquery/jquery.min.js')}}"></script>
 </head>
 <body class="hold-transition sidebar-mini dark-mode">
 <!-- Site wrapper -->
@@ -116,13 +120,13 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="{{ asset('/plugins/jquery/jquery.min.js')}}"></script>
+
 <!-- Bootstrap 4 -->
 <script src="{{ asset('/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 {{--<script src="{{ asset('/dist/js/demo.js')}}"></script>--}}
-@yield('scripts')
+@stack('scripts')
 </body>
 </html>

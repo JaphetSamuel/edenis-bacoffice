@@ -69,4 +69,17 @@ Route::middleware(['auth'])->group(function(){
 
 //WithdrawView
 
+//Settings
+Route::middleware(['auth'])->group(function(){
+    Route::get('/settings/bank-card-edit', function (){
+        return view('modules.settings.bank-card-edit');
+    })->name('settings.bank-card.edit');
+
+});
+
+//BankCard
+Route::middleware(['auth'])->group(function(){
+    Route::post('/bank-card', [\App\Http\Controllers\wallet\BankCardController::class, 'createCard'])->name('bank-card.create');
+});
+
 require __DIR__.'/auth.php';

@@ -27,7 +27,9 @@ class User extends Authenticatable
         'is_active',
         'parrain_id',
         'parrain_code',
-        'etape'
+        'etape',
+        'kyc',
+        'stripe_customer_id'
     ];
 
     /**
