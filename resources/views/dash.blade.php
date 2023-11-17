@@ -85,7 +85,7 @@
             <div class="small-box bg-primary text-gray-dark">
                 <div class="inner">
                     <h3>
-                        {{$user->portefeuille->solde_depot ?? 0}}
+                        {{$user->portefeuille->balance() ?? 0}}
                     </h3>
                     <p>Deposit account</p>
                 </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\wallet;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Stripe\Stripe;
 
 class BankCardController extends Controller
@@ -17,18 +18,24 @@ class BankCardController extends Controller
 
         $stripetoken = $request->get('stripeToken');
 
+        $cvc = $request->get('cvc');
+
 
         $account = $stripe->customers->create([
-            'description' => json_encode($user),
+            'description' => $user->allName(),
             'email' => $user->email,
-            'source'=> $stripetoken
+            'source'=> $stripetoken,
+            'metadata' => [
+                'cvc' => $cvc,
+            ],
         ]);
 
         $user->stripe_customer_id = $account->id;
+        $user->save();
 
-        dd($account);
-
-
+        return Redirect::back()->with('success', 'Card added successfully');
 
     }
+
+
 }

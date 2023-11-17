@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\NetworkController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\settings\SettingsController;
 use App\Http\Controllers\wallet\DepositViewController;
 use App\Http\Controllers\wallet\TransactionViewController;
 use Illuminate\Support\Facades\Route;
@@ -71,9 +72,13 @@ Route::middleware(['auth'])->group(function(){
 
 //Settings
 Route::middleware(['auth'])->group(function(){
-    Route::get('/settings/bank-card-edit', function (){
-        return view('modules.settings.bank-card-edit');
-    })->name('settings.bank-card.edit');
+    Route::get('/settings/bank-card-edit', [SettingsController::class, 'bankCardEditView'])
+        ->name('settings.bank-card.edit');
+
+    Route::get('/settings',
+        [SettingsController::class, 'index'])->name('settings.index');
+
+
 
 });
 

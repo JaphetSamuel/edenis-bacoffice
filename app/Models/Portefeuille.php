@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Enums\TransactionSens;
+use App\Enums\TransactionStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -28,7 +30,20 @@ class Portefeuille extends Model
         return $this->hasMany(Transaction::class);
     }
 
+    public function balance()
+    {
+        $debit = $this->transactions()
+            ->where('sens', TransactionSens::DEBIT)
+            ->where('status',  TransactionStatus::ACCEPTEE)
+            ->sum('montant');
 
+        $credit = $this->transactions()
+            ->where('sens', TransactionSens::CREDIT)
+            ->where('status',  TransactionStatus::ACCEPTEE)
+            ->sum('montant');
+
+        return $credit - $debit;
+    }
 
 
 }

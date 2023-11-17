@@ -17,7 +17,9 @@ class Transaction extends Model
         'montant',
         'status',
         'numero_transaction',
-        'description'
+        'description',
+        'sens',
+        'hash'
     ];
 
     public function portefeuille()

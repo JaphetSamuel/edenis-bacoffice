@@ -7,5 +7,6 @@ enum TransactionStatus: string
     case EN_ATTENTE = 'en_attente';
     case ACCEPTEE = 'acceptee';
     case ANNULEE = 'annulee';
+    case REFUSEE = 'refusee';
 
 }

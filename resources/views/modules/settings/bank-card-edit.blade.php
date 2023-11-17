@@ -9,6 +9,11 @@
             <div class="card-header">
                 <h3 class="card-title text-gray-dark">{{__('Register Card')}}</h3>
             </div>
+            @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{session()->get('success')}}
+                </div>
+            @endif
             <!-- /.card-header -->
             <!-- form start -->
             <form method="post" action="{{route('bank-card.create')}}" id="card-form">
@@ -30,7 +35,7 @@
                         <label class="form-label" for="cvv" >CVV Code <i class="fe fe-help-circle ms-1"
                                                                          data-bs-toggle="tooltip" data-placement="top" title=""
                                                                          data-original-title="A 3 - digit number, typically printed on the back of a card."></i></label>
-                        <input value="234" type="text" class="form-control" name="cvv" id="cvv"
+                        <input value="234" type="text" class="form-control" name="cvv" id="cvc"
                                placeholder="xxx" inputmode="numeric" required maxlength="3">
                     </div>
 
