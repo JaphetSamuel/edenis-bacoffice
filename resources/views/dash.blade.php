@@ -82,6 +82,20 @@
         </div>
         <div class="col-lg-3 col-6">
             <!-- small box -->
+            <div class="small-box bg-primary text-gray-dark">
+                <div class="inner">
+                    <h3>
+                        {{$user->portefeuille->solde_depot ?? 0}}
+                    </h3>
+                    <p>Deposit account</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-money"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class=""></li>

@@ -26,7 +26,8 @@ class DepositViewController extends Controller
             'portefeuille_id'=>$user->portefeuille->id,
             'type'=>TransactionType::DEPOT,
             'status'=>TransactionStatus::EN_ATTENTE,
-            'description'=>'payement by '.$user->allName().' throught '.$payment_method
+            'description'=>'deposit by '.$user->allName().' throught '.$payment_method,
+            'hash'=>uniqid("trx_")
             ]);
 
         return redirect()->action(
@@ -37,8 +38,12 @@ class DepositViewController extends Controller
 
     public function displayPaymentlink(Request $request)
     {
+        $tansaction_id = $request->get('transaction_id');
+
         $payment_link = $this->generatePaymentToken();
-        $transaction = Transaction::find($request->get('transaction_id'))->first();
+        $transaction = Transaction::where('id',$tansaction_id)->first();
+        $method = $request->get('payment_method');
+
         return view('modules.wallet.deposit.link',[
             'payment_link' => 'https://link.trustwallet.com/send?coin=0&address=bc1qjfudrhgxnya48xvy6nzlcw0c2xt653xnl954cr',
             'payment_address'=>'bc1qjfudrhgxnya48xvy6nzlcw0c2xt653xnl954cr',

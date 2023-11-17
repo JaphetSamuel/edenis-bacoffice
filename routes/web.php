@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NetworkController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\wallet\DepositViewController;
 use App\Http\Controllers\wallet\TransactionViewController;
@@ -61,7 +62,7 @@ Route::middleware(['auth'])->group(function(){
 
 //NetworkView
 Route::middleware(['auth'])->group(function(){
-    Route::get('/network', [\App\Http\Controllers\NetworkController::class, 'index'])->name('network.index');
+    Route::get('/network', [NetworkController::class, 'index'])->name('network.index');
 });
 
 //PackageView
