@@ -27,6 +27,10 @@ class StripeHelper
     public static function getCardInfo(){
         $user = auth()->user();
 
+        if(empty($user->stripe_customer_id)){
+            return null;
+        }
+
         $stripe = new \Stripe\StripeClient("sk_test_51K6NizJLGuTPl0hAY1olcBPjT1kUCjWAgLXi3Nf0gI21h2jnwMxWl7nEcFQtr7tqzkc6jaatZcZ3nRP1hCwCbQso00AyuoputN");
 
         $customer = $stripe->customers->retrieve(
