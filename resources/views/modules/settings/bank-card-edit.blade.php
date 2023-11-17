@@ -5,7 +5,7 @@
 @endpush
 @section('content')
     <section class="content justify-content-center row">
-        <div class="card card-primary col-lg-6 col-12 offset-1">
+        <div class="card card-primary col-lg-6 col-12 ">
             <div class="card-header">
                 <h3 class="card-title text-gray-dark">{{__('Register Card')}}</h3>
             </div>
@@ -16,32 +16,37 @@
             @endif
             <!-- /.card-header -->
             <!-- form start -->
-            <form method="post" action="{{route('bank-card.create')}}" id="card-form">
+            <form  method="post" action="{{route('bank-card.create')}}" id="card-form">
                 @csrf
                 <div class="card-body">
                     <div class="payment-errors"></div>
 
                     <div class="form-group">
                         <label for="fullname"> Name on your card</label>
-                        <input value="Anouma test" type="text" name="fullname" id="fullname" class="form-control col-12">
+                        <input  type="text" name="fullname" id="fullname" class="form-control col-12">
                     </div>
 
                     <div class="mb-3 w-lg-50">
                         <label class="form-label" for="cc-mask">Card Number</label>
-                        <input value="4242 4242 4242 4242" type="text" class="form-control" id="cc-mask"   inputmode="numeric"
+                        <input type="text" class="form-control" id="cc-mask"   inputmode="numeric"
                                placeholder="xxxx-xxxx-xxxx-xxxx" required>
                     </div>
                     <div class="mb-3 w-lg-50">
                         <label class="form-label" for="cvv" >CVV Code <i class="fe fe-help-circle ms-1"
                                                                          data-bs-toggle="tooltip" data-placement="top" title=""
                                                                          data-original-title="A 3 - digit number, typically printed on the back of a card."></i></label>
-                        <input value="234" type="text" class="form-control" name="cvv" id="cvc"
+                        <input  type="text" class="form-control" name="cvv" id="cvc"
                                placeholder="xxx" inputmode="numeric" required maxlength="3">
                     </div>
 
-                    <div class="form-group col-6 col-lg-4">
+                    <div class="form-group col-5 col-lg-3">
+                        <label for="expiry"> Expiry month</label>
+                        <input type="number" maxlength="2" max="12" name="expiry" id="expiry_month" class="form-control col-12" required>
+                    </div>
+
+                    <div class="form-group col-5 col-lg-3">
                         <label for="expiry"> Expiry date</label>
-                        <input type="month" name="expiry" id="expiry" class="form-control col-12" required>
+                        <input type="number" maxlength="2" minlength="2" min="23" name="expiry" id="expiry_year" class="form-control col-12" required>
                     </div>
                 </div>
                 <div>
@@ -77,8 +82,8 @@
             Stripe.card.createToken({
                 number: $('#cc-mask').val(),
                 cvc: $('#cvc').val(),
-                exp_month:12,// $('.card-expiry-month').val(),
-                exp_year: 24//$('.card-expiry-year').val()
+                exp_month: $('#expiry_month').val(),
+                exp_year:$('#expiry_year').val()
             }, function (status, response) {
                 if (response.error) { // Ah une erreur !
                     // On affiche les erreurs
