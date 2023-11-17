@@ -82,4 +82,12 @@ class User extends Authenticatable
         return $this->name . ' ' . $this->lastname;
     }
 
+    public static function created($callback)
+    {
+        Portefeuille::create([
+            'user_id' => $callback->id,
+            'solde' => 0,
+        ]);
+    }
+
 }

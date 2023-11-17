@@ -87,7 +87,7 @@
                     <h3>
                         {{$user->portefeuille->balance() ?? 0}}
                     </h3>
-                    <p>Deposit account</p>
+                    <p>Real Balance</p>
                 </div>
                 <div class="icon">
                     <i class="fa fa-download"></i>

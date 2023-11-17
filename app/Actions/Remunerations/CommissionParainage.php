@@ -32,8 +32,11 @@ class CommissionParainage
             $commission = $purchaseAmount * ($pourcentage / 100);
 
             // Ajouter la commission à l'utilisateur parrain.
-            $portefeuille->solde += $commission;
-            $portefeuille->save();
+            if($portefeuille){
+                $portefeuille->solde += $commission;
+                $portefeuille->save();
+            }
+
 
             //  calculer la commission pour l'utilisateur parrain et incrémentez la génération ,recursivement.
             CommissionParainage::applyCommission($sponsor->id, $purchaseAmount, $generation + 1);

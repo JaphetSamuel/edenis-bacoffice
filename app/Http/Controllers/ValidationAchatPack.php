@@ -64,11 +64,6 @@ class ValidationAchatPack extends Controller
                 'numero_transaction' => $charge->id,
             ]);
 
-            $transaction->save();
-
-            // application commission
-            CommissionParainage::applyCommission($user->id, $transaction->montant);
-
 
             // mise a jour
             $portefeuille->update([
@@ -76,7 +71,8 @@ class ValidationAchatPack extends Controller
                 'titres'=> $portefeuille->titres + $validated['quantite']
             ]);
 
-            $portefeuille->save();
+            // application commission
+            CommissionParainage::applyCommission($user->id, $transaction->montant);
 
             $pack->update([
                 'quantite' => $pack->quantite - $validated['quantite']

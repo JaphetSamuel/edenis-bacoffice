@@ -41,12 +41,12 @@
 
                     <div class="form-group col-5 col-lg-3">
                         <label for="expiry"> Expiry month</label>
-                        <input type="number" maxlength="2" max="12" name="expiry" id="expiry_month" class="form-control col-12" required>
+                        <input type="number" maxlength="2" minlength="2" max="12" name="expiry" id="expiry_month" class="form-control col-12" required>
                     </div>
 
                     <div class="form-group col-5 col-lg-3">
                         <label for="expiry"> Expiry date</label>
-                        <input type="number" maxlength="2" minlength="2" min="23" name="expiry" id="expiry_year" class="form-control col-12" required>
+                        <input type="number" maxlength="2" max="99" minlength="2" min="23" name="expiry" id="expiry_year" class="form-control col-12" required>
                     </div>
                 </div>
                 <div>
