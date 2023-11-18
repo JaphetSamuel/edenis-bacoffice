@@ -94,6 +94,8 @@
                 </div>
             </div>
         </div>
+
+{{--        Edenis info    --}}
         <div class="col-lg-3 col-6">
             <!-- small box -->
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -125,6 +127,13 @@
             </div>
         </div>
         <!-- /.card -->
+
+        <!-- /.metric -->
+        <div class="col-lg-6 col-6">
+            @include('modules.wallet.transaction.transaction-list-widget')
+        </div>
+
+
 
     </section>
 @endsection

@@ -63,7 +63,7 @@ Route::middleware(['auth'])->group(function(){
 
 //NetworkView
 Route::middleware(['auth'])->group(function(){
-    Route::get('/network', [NetworkController::class, 'index'])->name('network.index');
+    Route::get('/network', [\App\Http\Controllers\NetworkController::class, 'index'])->name('network.index');
 });
 
 //PackageView
