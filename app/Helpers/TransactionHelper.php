@@ -2,6 +2,7 @@
 
 namespace App\Helpers;
 
+use App\Enums\TransactionType;
 use App\Models\Transaction;
 
 class TransactionHelper
@@ -11,7 +12,7 @@ class TransactionHelper
         $transaction = new Transaction([
             'montant' => $montant,
             'sens' => 'CREDIT',
-            'type' => 'COMMISSION',
+            'type' => TransactionType::COMMISSION,
             'status' => 'ACCEPTEE',
             'description' => "Commission de $commission% de $fromName",
         ]);
