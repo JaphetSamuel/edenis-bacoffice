@@ -45,7 +45,7 @@ class DepositViewController extends Controller
         $method = $request->get('payment_method');
 
         return view('modules.wallet.deposit.link',[
-            'payment_link' => 'https://link.trustwallet.com/send?coin=0&address=bc1qjfudrhgxnya48xvy6nzlcw0c2xt653xnl954cr',
+            'payment_link' => 'https://link.trustwallet.com/send?amount=35&value=35000000&asset=c195_tTR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t&address=TVbg4ekhkYGSLc6tagFe33Yh8GTdyQSgqD ',
             'payment_address'=>'TVbg4ekhkYGSLc6tagFe33Yh8GTdyQSgqD',
             'transaction'=>$transaction,
             'method'=>$request->get('payment_method')
