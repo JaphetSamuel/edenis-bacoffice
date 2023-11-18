@@ -20,7 +20,8 @@
                     </div>
                     <div class="col-6">
                         <div class="visible-print text-center">
-                            {!! QrCode::size(100)
+                            {!! QrCode::size(100)->color(255,255,255)
+                                ->backgroundColor(0,0,0)
                                 ->generate($payment_link); !!}
                             <p>Or Scan the qrcode and pay with trust Wallet</p>
                         </div>
