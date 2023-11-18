@@ -28,7 +28,7 @@ class AchatPackRequest extends FormRequest
         return [
             'pack_id' => 'required|exists:packs,id',
             'quantite' => 'required|integer|min:1',
-            'user_id' => 'required|exists:users,id',
+            'meth' => 'required|in:card,crypto',
         ];
     }
 }

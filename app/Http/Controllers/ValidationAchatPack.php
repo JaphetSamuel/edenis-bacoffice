@@ -8,6 +8,7 @@ use App\Enums\TransactionSens;
 use App\Enums\TransactionStatus;
 use App\Enums\TransactionType;
 use App\Helpers\StripeHelper;
+use App\Helpers\TransactionHelper;
 use App\Http\Requests\AchatPackRequest;
 use App\Models\Pack;
 use App\Models\Transaction;
@@ -20,38 +21,54 @@ class ValidationAchatPack extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(AchatPackRequest $achat)
+    public function __invoke( AchatPackRequest $achat)
     {
+        //declaration
+        $user = auth()->user();
         $validated = $achat->validated();
 
-        // declaration
-        $pack = Pack::find($validated['pack_id']);
-        $user = User::find($validated['user_id']);
-        $quantite = $validated['quantite'];
+        var_dump($validated);
 
-        if($pack->quantite < $quantite){
-            return Redirect::back()->withErrors(['quantite' => 'Quantité insuffisante']);
-        }
+        $method = $validated['meth'];
+        $pack = Pack::find($validated['pack_id']);
+        $quantite = $validated['quantite'];
 
         $portefeuille = $user->portefeuille;
         $montant = $pack->prix * $quantite;
 
-
-        if(empty($user->stripe_customer_id)){
-            return Redirect::back()->withErrors(['solde' => 'PLease add a payment method']);
+        //verification
+        if($pack->quantite < $quantite){
+            return Redirect::back()->withErrors(['quantite' => 'Quantité insuffisante']);
         }
 
+        if($method == 'crypto'){
+            return $this->payWithCrypto($pack, $quantite);
+        }
+
+        if(empty($user->stripe_customer_id)){
+            session(['pack' => $pack]);
+            session(['quantite' => $quantite]);
+
+            return Redirect::route('settings.bank-card.edit', )->with([
+                'next_context'=>$validated
+            ]);
+        }
+
+        return $this->payWithCard($pack, $quantite);
+
+
+    }
+
+    public function payWithCard($pack, $quantite){
+
+        $user = auth()->user();
+
+        $portefeuille = $user->portefeuille;
+        $montant = $pack->prix * $quantite;
 
         // creation de la transaction
-        $transaction = Transaction::create([
-            'portefeuille_id' => $portefeuille->id,
-            'type' => TransactionType::ACHAT,
-            'montant' => $montant,
-            'status' => TransactionStatus::EN_ATTENTE,
-            'sens'=>TransactionSens::CREDIT->value,
-            'description' => 'Achat de pack ' . $pack->libelle . ' par ' . $user->name,
-        ]);
-
+        $transaction = TransactionHelper::pack($montant, $pack);
+        $transaction->portefeuille()->associate($portefeuille);
         $transaction->save();
 
         // prelevement
@@ -68,14 +85,14 @@ class ValidationAchatPack extends Controller
             // mise a jour
             $portefeuille->update([
                 'solde' => $portefeuille->solde + $transaction->montant,
-                'titres'=> $portefeuille->titres + $validated['quantite']
+                'titres'=> $portefeuille->titres + $quantite
             ]);
 
             // application commission
             CommissionParainage::applyCommission($user->id, $transaction->montant);
 
             $pack->update([
-                'quantite' => $pack->quantite - $validated['quantite']
+                'quantite' => $pack->quantite - $quantite
             ]);
         }
 
@@ -88,14 +105,27 @@ class ValidationAchatPack extends Controller
             return Redirect::back()->withErrors(['solde' => 'Transaction canceled']);
         }
 
-//       mise à jour de l'état
-        if($user->etape < Etapes::PACK){
-            $user->update([
-                'etape' => Etapes::PACK
-            ]);
-        }
-
 
         return Redirect::route('dash', )->with('success', 'Purchase succed !');
+
+    }
+
+    public function payWithCrypto($pack, $quantite){
+        $user = auth()->user();
+
+        $portefeuille = $user->portefeuille;
+        $montant = $pack->prix * $quantite;
+
+
+        // creation de la transaction
+        $transaction = TransactionHelper::pack($montant, $pack);
+
+        $transaction->portefeuille()->associate($portefeuille);
+
+        $transaction->save();
+
+        $user->setStatus('first_pack');
+
+        return Redirect::route('deposit.link', ['transaction_id'=>$transaction->id]);
     }
 }

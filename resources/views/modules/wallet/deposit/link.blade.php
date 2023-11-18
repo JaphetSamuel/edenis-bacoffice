@@ -15,7 +15,8 @@
                         payment address  <code class="ml-2">{{$payment_address}}</code>
 
                         <p>
-                            1. Copy the payment link in your wallet
+                            <button onClick="navigator.clipboard.writeText(`{{ $payment_link }}`);;alert('copy')"
+                            class="btn btn-primary text-gray-dark mt-3">Copy link</button>
                         </p>
                     </div>
                     <div class="col-6">
@@ -23,7 +24,7 @@
                             {!! QrCode::size(100)->color(255,255,255)
                                 ->backgroundColor(0,0,0)
                                 ->generate($payment_link); !!}
-                            <p>Or Scan the qrcode and pay with trust Wallet</p>
+                            <p>Or Scan the qrcode and pay with  Wallet</p>
                         </div>
                     </div>
                 </div>

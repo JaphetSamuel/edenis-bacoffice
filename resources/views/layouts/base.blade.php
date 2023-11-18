@@ -148,8 +148,10 @@
         toastr.success("{{Session::get('success')}}")
         @endif
 
-        @if(Session::has('error'))
-        toastr.error("{{Session::get('error')}}")
+        @if($errors->any())
+            @forEach($errors->all() as $error)
+                toastr.error("{{$error}}")
+            @endforeach
         @endif
 
         @if(Session::has('info'))

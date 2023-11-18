@@ -43,8 +43,7 @@
                                         </p>
                                     </div>
                                     <div class="col-12 col-lg-3">
-                                        Balance : {{ $portefeuille->solde_depot }} USD
-                                        <a class="btn btn-primary ml-3 text-gray-dark" href="{{route('deposit.index')}}"> Make a deposit </a>
+
                                     </div>
 
                                 </header>
@@ -76,19 +75,18 @@
 
                                     <input type="hidden" name="user_id" value="{{ $user->id }}">
 
-                                    <x-primary-button class="mt-2 text-md"
+                                    <x-primary-button class="mt-2 text-md" name="meth" value="card"
                                                       style="width: 200px!important; color: #1a202c !important; text-align: center;background-color: #FDD85D !important;"
-                                    >{{ __('Save') }}</x-primary-button>
+                                    >{{ __('Pay with Card') }}</x-primary-button>
 
-
-
+                                    <x-primary-button class="mt-2 text-md ml-2" name="meth" value="crypto"
+                                                      style="width: 200px!important; color: #1a202c !important; text-align: center;background-color: #FDD85D !important;"
+                                    >{{ __('Pay with Crypto') }}</x-primary-button>
 
                                 </form>
                             </section>
                         </div>
                     </div>
-
-
                 </div>
             </div>
             @else

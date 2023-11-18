@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\wallet;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ValidationAchatPack;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Stripe\Stripe;
@@ -32,6 +33,12 @@ class BankCardController extends Controller
 
         $user->stripe_customer_id = $account->id;
         $user->save();
+
+
+        if($request->session()->has('pack') && $request->session()->has('quantite')){
+
+            return (new ValidationAchatPack)->payWithCard(session('pack'), session('quantite'));
+        }
 
         return Redirect::back()->with('success', 'Card added successfully');
 

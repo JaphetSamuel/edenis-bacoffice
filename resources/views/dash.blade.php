@@ -22,7 +22,7 @@
             <div class="col-sm-4 col-md-2">
                 <div class="color-palette-set">
                     <div class="bg-primary color-palette"><h5 class="text-center text-gray-dark">KYC</h5></div>
-                    @if($user->etape >= \App\Enums\Etapes::KYC)
+                    @if($user->status() == 'first_pack')
                         <div class="bg-success disabled color-palette"><span>Passed</span></div>
                     @else
                     <div class="bg-secondary disabled color-palette"><span>Pending</span></div>
@@ -32,7 +32,7 @@
             <div class="col-sm-4 col-md-2">
                 <div class="color-palette-set">
                     <div class="bg-primary color-palette"><h5 class="text-center text-gray-dark">Payement</h5></div>
-                    @if($user->etape >= \App\Enums\Etapes::PACK)
+                    @if($user->status() == 'first_pack')
                         <div class="bg-success disabled color-palette"><span>Passed</span></div>
                     @else
                         <div class="bg-secondary disabled color-palette"><span>Pending</span></div>

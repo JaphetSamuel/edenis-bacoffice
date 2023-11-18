@@ -17,8 +17,9 @@ class SettingsController extends Controller
         ]);
     }
 
-    public function bankCardEditView()
+    public function bankCardEditView(Request $request)
     {
-        return view('modules.settings.bank-card-edit');
+
+        return view('modules.settings.bank-card-edit', ['request' => $request]);
     }
 }

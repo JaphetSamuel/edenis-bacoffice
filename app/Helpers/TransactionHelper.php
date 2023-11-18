@@ -21,4 +21,17 @@ class TransactionHelper
 
         return $transaction;
     }
+
+    public static function pack($montant, $pack){
+
+        $user = auth()->user();
+
+        return  new Transaction([
+            'type' => TransactionType::ACHAT,
+            'montant' => $montant,
+            'status' => TransactionStatus::EN_ATTENTE,
+            'sens'=>TransactionSens::CREDIT->value,
+            'description' => 'Achat de pack ' . $pack->libelle . ' par ' . $user->name,
+        ]);
+    }
 }
