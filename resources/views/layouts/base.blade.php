@@ -96,7 +96,7 @@
         <div class="float-right d-none d-sm-block">
             <b>Version</b> 0.1.12
         </div>
-        <strong>Copyright &copy; 2023 <a href="https://adminlte.io">Edenis Labs</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2023 <a href="http://group-edenis.com">Edenis Labs</a>.</strong> All rights reserved.
     </footer>
 
     <!-- Control Sidebar -->
