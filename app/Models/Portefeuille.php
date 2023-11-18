@@ -45,5 +45,14 @@ class Portefeuille extends Model
         return $credit - $debit;
     }
 
+    public function registerTransaction(Transaction $transaction)
+    {
+        $transaction->portefeuille()->associate($this);
+        $transaction->save();
+
+        $this->solde = $this->solde + $transaction->montant;
+        $this->save();
+    }
+
 
 }

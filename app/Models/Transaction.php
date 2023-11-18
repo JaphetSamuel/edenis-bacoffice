@@ -6,10 +6,12 @@ use App\Enums\TransactionStatus;
 use App\Enums\TransactionType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\ModelStatus\HasStatuses;
 
 class Transaction extends Model
 {
     use HasFactory;
+    use HasStatuses;
 
     protected $fillable = [
         'portefeuille_id',

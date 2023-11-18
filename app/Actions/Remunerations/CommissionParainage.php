@@ -2,6 +2,7 @@
 
 namespace App\Actions\Remunerations;
 
+use App\Helpers\TransactionHelper;
 use App\Models\Commission;
 use App\Models\User;
 
@@ -32,10 +33,8 @@ class CommissionParainage
             $commission = $purchaseAmount * ($pourcentage / 100);
 
             // Ajouter la commission à l'utilisateur parrain.
-            if($portefeuille){
-                $portefeuille->solde += $commission;
-                $portefeuille->save();
-            }
+            $portefeuille->registerTransaction(TransactionHelper::commission($commission, $pourcentage, $user->name));
+
 
 
             //  calculer la commission pour l'utilisateur parrain et incrémentez la génération ,recursivement.
