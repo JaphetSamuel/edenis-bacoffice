@@ -67,5 +67,12 @@ class Transaction extends Model
         $this->numero_transaction = 'TRX' . time();
     }
 
+    public function generateHash()
+    {
+        $this->hash = uniqid("trx_");
+    }
+
+
+
 
 }

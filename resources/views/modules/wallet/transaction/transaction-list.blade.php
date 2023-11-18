@@ -34,12 +34,12 @@
                     <tbody>
                     @foreach($transaction_list as $transaction)
                         <tr>
-                            <td>{{$transaction->numero_transaction}}</td>
+                            <td>{{$transaction->hash}}</td>
                             <td>{{$transaction->type}}</td>
                             <td>{{$transaction->montant}}</td>
                             <td>{{$transaction->created_at}}</td>
                             <td>{{$transaction->status}}</td>
-                            <td>{{$transaction->reason}}</td>
+                            <td>{{$transaction->description}}</td>
                         </tr>
                     @endforeach
 
