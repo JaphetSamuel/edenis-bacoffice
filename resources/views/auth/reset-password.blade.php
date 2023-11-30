@@ -9,6 +9,7 @@
             <div class="card-body">
 
                 <form action="{{ route('password.store') }}" method="post">
+                    @csrf
                     <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
                     <div class="input-group mb-3">
