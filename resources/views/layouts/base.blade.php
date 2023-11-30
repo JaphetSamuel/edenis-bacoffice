@@ -49,6 +49,19 @@
 
 
             <!-- Messages Dropdown Menu -->
+            <li class="nav-item">
+
+                <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <i class="fa fa-user"></i>
+                    <span>{{strtoupper(Auth()->user()->allName())}}</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
+                    <div class="dropdown-divider"></div>
+                    <a href="{{route('profile.edit')}}" class="dropdown-item">
+                        <p>Profile</p>
+                    </a>
+                </div>
+            </li>
 
             <!-- Notifications Dropdown Menu -->
             <li class="nav-item">
@@ -62,6 +75,13 @@
                 <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                     <i class="fas fa-expand-arrows-alt"></i>
                 </a>
+            </li>
+
+            <li class="na-item">
+                <form action="{{route('logout')}}" method="post" class="dropdown-item">
+                    @csrf
+                    <button type="submit" class="btn btn-danger btn-block">Logout</button>
+                </form>
             </li>
 
         </ul>

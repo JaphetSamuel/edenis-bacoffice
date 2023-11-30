@@ -44,6 +44,9 @@ class ValidationAchatPack extends Controller
         if($method == 'crypto'){
             return $this->payWithCrypto($pack, $quantite);
         }
+        else {
+            return Redirect::back()->withErrors(['error' => 'Sorry!! Card Method is not working yet']);
+        }
 
         if(empty($user->stripe_customer_id)){
             session(['pack' => $pack]);

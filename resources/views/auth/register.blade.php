@@ -1,92 +1,115 @@
-<x-guest-layout>
-        <form class="w-full grid md:grid-cols-2 gap-4 " method="POST" action="{{ route('register') }}">
-            @csrf
+@extends('auth.auth_base')
 
-            <div class="sm:col-span-2 items-center">
-                <span class="text-white font-extrabold text-4xl">Signup</span>
+@section('content')
+    <div class="register-box col-lg-4">
+        <div class="card card-outline card-primary">
+            <div class="card-header text-center">
+                <a href="/" class="h1"><b>Edenis</b>Partners</a>
             </div>
+            <div class="card-body">
+                <p class="login-box-msg">Register a new membership</p>
 
-            <div class="h-4 col-span-2"></div>
+                <form action="{{route("register")}}" method="post">
+                    @csrf
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Firstname" name="name" value="{{old('name')}}" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                        @if($errors->has('name'))
+                            <span class="text-danger">{{$errors->first('name')}}</span>
+                        @endif
+                    </div>
 
-            <!-- Name -->
-            <div>
-                <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required
-                              autofocus autocomplete="name"
-                              placeholder="Firstname"  />
-                <x-input-error :messages="$errors->get('name')" class="mt-2"/>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Lastname" name="lastname" value="{{old('lastname')}}" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                        @if($errors->has('lastname'))
+                            <span class="text-danger">{{$errors->first('lastname')}}</span>
+                        @endif
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Email" name="email" value="{{old('email')}}" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                        @if($errors->has('email'))
+                            <span class="text-danger">{{$errors->first('email')}}</span>
+                        @endif
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="tel" class="form-control" placeholder="Phone" name="phone" value="{{old('phone')}}" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-phone"></span>
+                            </div>
+                        </div>
+                        @if($errors->has('phone'))
+                            <span class="text-danger">{{$errors->first('phone')}}</span>
+                        @endif
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" placeholder="Password" name="password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" placeholder="Retype password"
+                               name="password_confirmation" required autocomplete="new-password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                        @if($errors->has('password_confirmation'))
+                            <span class="text-danger">{{$errors->first('password_confirmation')}}</span>
+                        @endif
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Sponsor code" name="code" value="{{$code}}" readonly>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-shapes"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="icheck-primary">
+                                <input type="checkbox" id="agreeTerms" name="terms" value="{{old('terms')}}" required>
+                                <label for="agreeTerms">
+                                    <label for="terms" class="ml-2 tex-xl"> I agree to the <a href="#"class="font-bold underline">General Terms of Use</a>.</label>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block text-gray-dark">Register</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+                <a href="{{route('login')}}" class="text-center">{{ __('Already registered?') }}</a>
             </div>
+            <!-- /.form-box -->
+        </div><!-- /.card -->
+    </div>
 
-            <!-- LastName -->
-            <div>
-                <x-text-input id="lastname" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')"
-                              required autofocus autocomplete="lastname" placeholder="Lastname" />
-                <x-input-error :messages="$errors->get('lastname')" class="mt-2"/>
-            </div>
 
-            <!-- Email Address -->
-            <div class="mt-4 md:col-span-2">
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
-                              autocomplete="username" placeholder="Email"/>
-                <x-input-error :messages="$errors->get('email')" class="mt-2"/>
-            </div>
-
-            <!-- Phone -->
-            <div class="mt-4">
-                <x-text-input id="phone" class="block mt-1 w-full" type="tel" name="phone" :value="old('phone')" required
-                placeholder="Phone"/>
-                <x-input-error :messages="$errors->get('phone')" class="mt-2"/>
-            </div>
-            <div></div>
-
-            <!-- Password -->
-            <div class="mt-4 col-span-2">
-
-                <x-text-input id="password" class="block mt-1 w-full"
-                              type="password"
-                              name="password"
-                              placeholder="Password"
-                              required autocomplete="new-password"/>
-
-                <x-input-error :messages="$errors->get('password')" class="mt-2"/>
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4 col-span-2">
-
-                <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                              type="password"
-                              placeholder="Confirm Password"
-                              name="password_confirmation" required autocomplete="new-password"/>
-
-                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2"/>
-            </div>
-
-            <!-- Sponsor Code -->
-            <div class="mt-4 col-span-2">
-                <x-text-input id="code" class="block mt-1 w-full" type="text" name="code" :value="$code" readonly
-                placeholder="Sponsor Code"/>
-                <x-input-error :messages="$errors->get('code')" class="mt-2"/>
-            </div>
-
-            <!-- Terms -->
-            <div class="mt-4 col-span-2 flex">
-                <x-checkbox-input type="checkbox" id="terms" class="block mt-1" type="checkbox" name="terms" :value="old('terms')" required
-                placeholder="Terms"/>
-                <label for="terms" class="ml-2 tex-xl"> By registering, you agree that you have read, understand, and acknowledge our
-                    <a href="#" class="font-bold underline">Privacy Policy</a> and accept our <a href="#"class="font-bold underline">General Terms of Use</a>.</label>
-                <x-input-error :messages="$errors->get('terms')" class="mt-2"/>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-white dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-                   href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-primary-button class="ml-4 bg-primary text-xl" style="width: 200px!important; color: #1a202c !important; text-align: center;background-color: #FDD85D !important;">
-                    {{ __('Register') }}
-                </x-primary-button>
-            </div>
-        </form>
-</x-guest-layout>
-
+@endsection

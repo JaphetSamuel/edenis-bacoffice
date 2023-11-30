@@ -12,7 +12,9 @@
                     <div class="col-6">
                         <p> send exactly USDT TRC20 of: {{$transaction->montant}}</p>
 
-                        payment address  <code class="ml-2">{{$payment_address}}</code>
+                        Payment address  <code class="ml-2 px-2 bold"
+                                              style="background-color: #FDD85D; color: teal"
+                        >{{$payment_address}}</code>
 
                         <p>
                             <button onClick="navigator.clipboard.writeText(`{{ $payment_link }}`);;alert('copy')"
