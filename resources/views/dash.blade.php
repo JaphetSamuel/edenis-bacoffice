@@ -129,7 +129,7 @@
         <!-- /.card -->
 
         <!-- /.metric -->
-        <div class="col-lg-6 col-6">
+        <div class="col-lg-6 col-6 col-sm-12">
             @include('modules.wallet.transaction.transaction-list-widget')
         </div>
 
