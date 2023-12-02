@@ -85,7 +85,7 @@
             <div class="small-box bg-primary text-gray-dark">
                 <div class="inner">
                     <h3>
-                        {{$user->portefeuille->balance() ?? 0}}
+                        {{Portefeuille::current()->balance() ?? 0}}
                     </h3>
                     <p>Real Balance</p>
                 </div>

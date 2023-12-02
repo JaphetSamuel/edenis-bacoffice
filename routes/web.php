@@ -69,6 +69,10 @@ Route::middleware(['auth'])->group(function(){
 //PackageView
 
 //WithdrawView
+Route::middleware(['auth'])->group(function(){
+    Route::get('/withdrawal', [\App\Http\Controllers\wallet\WithdrawViewController::class, 'index'])->name('withdrawal.index');
+    Route::post('/withdraw', [\App\Http\Controllers\wallet\WithdrawViewController::class, 'store'])->name('withdrawal.store');
+});
 
 //Settings
 Route::middleware(['auth'])->group(function(){

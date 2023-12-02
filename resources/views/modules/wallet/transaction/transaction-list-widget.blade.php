@@ -1,4 +1,4 @@
-<table class="table table-head-fixed text-nowrap">
+<table class="table table-head-fixed text-nowrap col-sm-12">
     <thead>
     <tr>
         <td colspan="3"> 10 Last Transactions </td>
@@ -21,7 +21,7 @@
          as $transaction)
         <tr>
             <td>{{$transaction->hash}}</td>
-            <td>{{$transaction->montant}}</td>
+            <td>{{$transaction->montant}} usd</td>
             <td>{{$transaction->created_at}}</td>
         </tr>
     @endforeach

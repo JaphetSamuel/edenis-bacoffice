@@ -54,5 +54,27 @@ class Portefeuille extends Model
         $this->save();
     }
 
+    public static  function current():Portefeuille
+    {
+        $portefeuille = auth()->user()->portefeuille;
+
+        if (!$portefeuille and true) {
+            $portefeuille = Portefeuille::create([
+                'user_id' => auth()->user()->id,
+                'solde' => 0,
+                'solde_depot' => 0,
+                'solde_reel' => 0,
+                'titres' => 0
+            ]);
+        }
+
+        return $portefeuille;
+    }
+
+    public function withdrawals()
+    {
+        return $this->hasMany(Withdrawal::class);
+    }
+
 
 }
