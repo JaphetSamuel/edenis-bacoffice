@@ -21,7 +21,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($filleuls as $filleul)
+                    @foreach($filleuls->get() as $filleul)
                         <tr>
                             <td>{{$filleul->allName}}</td>
                             <td>{{$filleul->isActive}}</td>
