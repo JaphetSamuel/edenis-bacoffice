@@ -23,7 +23,7 @@
                     <tbody>
                     @foreach($filleuls as $filleul)
                         <tr>
-                            <td>{{$filleul->allName}}</td>
+                            <td>{{$filleul->name.' '.$filleul->lastname}}</td>
                             <td>{{$filleul->isActive}}</td>
                             <td>{{$filleul->created_at}}</td>
                         </tr>

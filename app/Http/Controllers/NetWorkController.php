@@ -11,7 +11,6 @@ class NetWorkController extends Controller
         $user = auth()->user();
 
         $filleuls = $user->filleuls()->get();
-        dd($filleuls);
 
 
         return view('modules.network.index', [
