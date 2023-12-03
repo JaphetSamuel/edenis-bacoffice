@@ -11,6 +11,7 @@ class NetWorkController extends Controller
         $user = auth()->user();
 
         $filleuls = $user->filleuls();
+        dd($filleuls);
 
         return view('modules.network.index', [
             'filleuls' => $filleuls,
