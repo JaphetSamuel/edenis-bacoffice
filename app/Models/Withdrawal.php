@@ -18,6 +18,7 @@ class Withdrawal extends Model
         'payment_date',
         'is_paid',
         'is_deleted',
+        'code'
     ];
 
     public function portefeuille()
