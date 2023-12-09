@@ -26,7 +26,7 @@
                     <tbody>
                     @foreach($withdrawals as $withdrawal)
                         <tr>
-                            <td>{{$withdrawal->amount}} usd </td>
+                            <td>{{$withdrawal->amount}} usdt </td>
                             <td>
                                 @if($withdrawal->status == 'pending')
                                     <span class="badge badge-warning">Pending</span>
@@ -62,11 +62,17 @@
                 <div class="modal-body">
                     <p>Withdrawals is paid avery 15th and 30th of the month</p>
                     <div class="form-group">
+                        <label for="wallet">Wallet to credit</label>
+                        <select name="wallet" id="wallet" class="form-control">
+                            @foreach($wallets as $wallet)
+                                <option value="{{$wallet->id}}">{{$wallet->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="amount">Amount</label>
-                        <input type="number" min="0" id="amount" name="amount" class="form-control" placeholder="Amount">
-                        <div class="input-group-append">
-                            <span class="input-group-text">USD</span>
-                        </div>
+                        <input type="number" min="0" id="amount" name="amount" class="form-control" placeholder="Amount of usdt">
+
                         <i class=></i>
                         @if($errors->has('amount'))
                             <span class="text-danger">{{$errors->first('amount')}}</span>

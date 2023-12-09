@@ -38,9 +38,10 @@ class TransactionsResource extends Resource
                     ->placeholder('Select the sens'),
                 Forms\Components\Select::make('status')
                     ->options([
-                        'pending' => 'pending',
-                        'accepted' => 'accepted',
-                        'rejected' => 'rejected',
+                        'en_attente' => 'en_attente',
+                        'acceptee' => 'acceptee',
+                        'refusee' => 'refusee',
+                        'annulee' => 'annulee',
                     ])
                     ->required()
                     ->placeholder('Select the status'),
@@ -51,9 +52,11 @@ class TransactionsResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('montant')
-                    ->searchable()
-                    ->sortable(),
+                Tables\Columns\TextColumn::make('hash')
+                ->searchable(),
+                Tables\Columns\TextColumn::make('numero_transaction')
+                ->searchable(),
+                Tables\Columns\TextColumn::make('montant'),
                 Tables\Columns\TextColumn::make('sens')
                     ->searchable()
                     ->sortable(),

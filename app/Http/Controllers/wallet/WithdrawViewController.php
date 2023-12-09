@@ -4,6 +4,7 @@ namespace App\Http\Controllers\wallet;
 
 use App\Helpers\TransactionHelper;
 use App\Http\Controllers\Controller;
+use App\Models\CryptoWallet;
 use App\Models\Portefeuille;
 use App\Models\Withdrawal;
 use Illuminate\Http\Request;
@@ -14,7 +15,14 @@ class WithdrawViewController extends Controller
     {
         $withdrawals = Portefeuille::current()->withdrawals()->latest()->get();
 
-        return view('modules.wallet.withdrawal.withdrawal-list', compact('withdrawals'));
+        $wallets = CryptoWallet::all();
+
+        return view('modules.wallet.withdrawal.withdrawal-list',
+            [
+                'withdrawals' => $withdrawals,
+                'wallets' => $wallets
+            ]
+        );
     }
 
     public function store(Request $request)

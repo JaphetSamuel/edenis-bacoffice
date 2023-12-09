@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\NetworkController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\settings\CryptoWalletController;
 use App\Http\Controllers\settings\SettingsController;
 use App\Http\Controllers\wallet\DepositViewController;
 use App\Http\Controllers\wallet\TransactionViewController;
@@ -82,7 +83,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/settings',
         [SettingsController::class, 'index'])->name('settings.index');
 
-
+    Route::post('/settings/crypto-wallet',
+        [CryptoWalletController::class, 'store'])->name('settings.crypto-wallet.store');
 
 });
 

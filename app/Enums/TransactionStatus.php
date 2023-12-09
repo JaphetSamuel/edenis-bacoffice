@@ -8,5 +8,4 @@ enum TransactionStatus: string
     case ACCEPTEE = 'acceptee';
     case ANNULEE = 'annulee';
     case REFUSEE = 'refusee';
-
 }
