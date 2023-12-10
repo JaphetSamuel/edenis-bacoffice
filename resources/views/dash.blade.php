@@ -8,14 +8,14 @@
     <section class="content row ">
         {{--        statut --}}
         <div class="col-12 row justify-content-center mb-3">
-            <div class="timeline justify-content-center">
-                <!-- Étape 1 -->
-                <x-timeline-item :completed="true" :label="'registered'"></x-timeline-item>
-                <x-timeline-item :completed="$user->etape >= \App\Enums\Etapes::VERIFIE" :label="'confirmed'"></x-timeline-item>
-                <x-timeline-item :completed="$user->status() == 'first_pack'" :label="'KYC'"></x-timeline-item>
-                <x-timeline-item :completed="$user->status() == 'first_pack'" :label="'First pack'"></x-timeline-item>
-                <x-timeline-item :completed="$user->etape >= \App\Enums\Etapes::SIGNED" :label="'signed'"></x-timeline-item>
-            </div>
+{{--            <div class="timeline justify-content-center">--}}
+{{--                <!-- Étape 1 -->--}}
+{{--                <x-timeline-item :completed="true" :label="'registered'"></x-timeline-item>--}}
+{{--                <x-timeline-item :completed="$user->etape >= \App\Enums\Etapes::VERIFIE" :label="'confirmed'"></x-timeline-item>--}}
+{{--                <x-timeline-item :completed="$user->status() == 'first_pack'" :label="'KYC'"></x-timeline-item>--}}
+{{--                <x-timeline-item :completed="$user->status() == 'first_pack'" :label="'First pack'"></x-timeline-item>--}}
+{{--                <x-timeline-item :completed="$user->etape >= \App\Enums\Etapes::SIGNED" :label="'signed'"></x-timeline-item>--}}
+{{--            </div>--}}
 
         </div>
 
