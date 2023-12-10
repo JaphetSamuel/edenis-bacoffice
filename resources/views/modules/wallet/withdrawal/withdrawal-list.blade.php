@@ -21,6 +21,7 @@
                         <th>Status</th>
                         <th>Code</th>
                         <th>Date</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -34,10 +35,23 @@
                                     <span class="badge badge-success">Approved</span>
                                 @elseif($withdrawal->status == 'rejected')
                                     <span class="badge badge-danger">Rejected</span>
+                                @elseif($withdrawal->status == 'created')
+                                    <span class="badge badge-info">to confirme</span>
                                 @endif
                             </td>
                             <td>{{$withdrawal->code}}</td>
                             <td>{{$withdrawal->created_at}}</td>
+                            <td>
+                                @if($withdrawal->status == 'pending')
+                                    <a href="" class="underline">
+                                        cancel
+                                    </a>
+                                    @elseif($withdrawal->status == 'created')
+                                    <button href="" class="btn btn-sm btn-outline-primary" type="button" data-toggle="modal" data-target="#withdraw-OTP-form">
+                                        confirme
+                                    </button>
+                                @endif
+                            </td>
                         </tr>
                     @endforeach
 
@@ -51,7 +65,7 @@
     <!-- Modal -->
     <div class="modal fade" id="withdraw-modal">
         <div class="modal-dialog">
-            <form class="modal-content" method="post" action="{{route('withdrawal.store')}}">
+            <form class="modal-content" method="post" action="{{route('withdrawal.store')}}" id="withdraw-form">
                 @csrf
                 <div class="modal-header bg-primary">
                     <h4 class="modal-title text-gray-dark">Withdrawal</h4>
@@ -88,6 +102,41 @@
         </div>
         <!-- /.modal-dialog -->
     </div>
+
+
+    <!-- Modal Confirmation OTP -->
+    <div class="modal fade" id="withdraw-OTP-form">
+        <div class="modal-dialog">
+            <form class="modal-content" method="post" action="{{route('withdrawal.confirme')}}" id="">
+                @csrf
+                <div class="modal-header bg-primary">
+                    <h4 class="modal-title text-gray-dark">Withdrawal OTP Confirmation</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Confirmation OTP code</p>
+                    <div class="form-group">
+                        <label for="otp">OTP Code</label>
+                        <input type="text" id="otp" name="token_code" class="form-control" placeholder="Code"/>
+                        @if($errors->has('token_code'))
+                            <span class="text-danger">{{$errors->first('token_code')}}</span>
+                        @endif
+                    </div>
+                    <a href=""> Send token again </a>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-outline-danger " data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-outline-primary">Validate OTP</button>
+                </div>
+            </form>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+
 
 
 @endsection

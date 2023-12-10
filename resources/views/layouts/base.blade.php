@@ -42,7 +42,7 @@
                 <a href="{{route('packs.create')}}" class="nav-link text-gray-dark text-bold border-info">Buy Pack</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="{{route('packs.create')}}" class="nav-link text-gray-dark text-bold border-info">Become partners</a>
+                <a href="{{route('packs.create')}}" class="nav-link text-gray-dark text-bold border-info">Become shareholder</a>
             </li>
         </ul>
 

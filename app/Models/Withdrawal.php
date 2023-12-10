@@ -14,7 +14,6 @@ class Withdrawal extends Model
     protected  $fillable = [
         'portefeuille_id',
         'amount',
-        'status',
         'payment_date',
         'is_paid',
         'is_deleted',
@@ -24,6 +23,11 @@ class Withdrawal extends Model
     public function portefeuille()
     {
         return $this->belongsTo(Portefeuille::class);
+    }
+
+    public function token()
+    {
+        return $this->morphOne(Token::class, 'tokenable');
     }
 
 

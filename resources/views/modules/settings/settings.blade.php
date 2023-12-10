@@ -98,19 +98,20 @@
                 <div class="modal-body">
                     <p>Add a new crypto wallet addresse</p>
                     <div class="form-group">
-                        <label for="adresse">Address</label>
-                        <input type="text" id="adresse" name="adresse" class="form-control" placeholder="Address">
-                        @if($errors->has('adresse'))
-                            <span class="text-danger">{{$errors->first('adresse')}}</span>
-                        @endif
-                    </div>
-                    <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name"  name="name" class="form-control" placeholder="Name">
                         @if($errors->has('name'))
                             <span class="text-danger">{{$errors->first('name')}}</span>
                         @endif
                     </div>
+                    <div class="form-group">
+                        <label for="adresse">Address</label>
+                        <input type="text" id="adresse" name="adresse" class="form-control" placeholder="Address">
+                        @if($errors->has('adresse'))
+                            <span class="text-danger">{{$errors->first('adresse')}}</span>
+                        @endif
+                    </div>
+
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-outline-danger " data-dismiss="modal">Cancel</button>

@@ -73,6 +73,7 @@ Route::middleware(['auth'])->group(function(){
 Route::middleware(['auth'])->group(function(){
     Route::get('/withdrawal', [\App\Http\Controllers\wallet\WithdrawViewController::class, 'index'])->name('withdrawal.index');
     Route::post('/withdraw', [\App\Http\Controllers\wallet\WithdrawViewController::class, 'store'])->name('withdrawal.store');
+    Route::post('/withdraw-otp', [\App\Http\Controllers\wallet\WithdrawViewController::class, 'confirme'])->name('withdrawal.confirme');
 });
 
 //Settings
