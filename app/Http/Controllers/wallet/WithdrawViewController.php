@@ -97,7 +97,7 @@ class WithdrawViewController extends Controller
         $withdrawal = $token->tokenable;
 
         $withdrawal->setStatus('pending');
-        $token->softDelete();
+        $token->setStatus('used');
         $token->save();
 
         return redirect()->route('withdrawal.index')->with('success', 'your withdrawal request has been confirmed');
