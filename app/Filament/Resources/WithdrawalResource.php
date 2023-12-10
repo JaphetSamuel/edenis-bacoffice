@@ -46,7 +46,8 @@ class WithdrawalResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('portefeuille.user.allName()')
+                Tables\Columns\TextColumn::make('portefeuille.user')
+                    ->state(fn($state)=> $state->name.' '.$state->lastname)
                     ->label('Name')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('amount')
