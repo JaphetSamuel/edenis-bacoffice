@@ -53010,4 +53010,24 @@ a.text-muted:hover {
   border-color: #4b545c !important;
 }
 
+
+.timeline {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center !important;
+    overflow-x: auto;
+}
+
+.timeline-item {
+    flex-shrink: 0;
+    width: 120px;
+    text-align: center;
+    /*position: relative;*/
+}
+
+.timeline-item p {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
 /*# sourceMappingURL=adminlte.css.map */

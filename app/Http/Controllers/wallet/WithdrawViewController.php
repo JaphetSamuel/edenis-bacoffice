@@ -108,6 +108,27 @@ class WithdrawViewController extends Controller
         Mail::to($token->tokenable->portefeuille->user)->queue(new TokenMail($token));
     }
 
+    public function cancel(Request $request)
+    {
+        $request->validate([
+            'withdrawal_id'=>'required',
+        ]);
+
+        $withdrawal_id = $request->withdrawal_id;
+
+        try {
+            $withdrawal = Withdrawal::findOrFail($withdrawal_id);
+        }
+        catch (ItemNotFoundException $e) {
+            return redirect()->route('withdrawal.index')->withErrors('withdrawal not found');
+        }
+        $withdrawal->is_deleted = true;
+        $withdrawal->setStatus('cancelled');
+        $withdrawal->save();
+
+        return redirect()->route('withdrawal.index')->with('success', 'your withdrawal request has been cancelled');
+    }
+
 
 
 }

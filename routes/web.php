@@ -43,6 +43,7 @@ Route::resource('packs', \App\Http\Controllers\Pack\PackController::class);
 // KYC
 Route::middleware(['auth', 'verified'])->group(function (){
     Route::get('/kyc/create', \App\Livewire\KycForm::class)->name('kyc.create');
+    Route::get('/kyc/contrat', [\App\Http\Controllers\KYCController::class, 'showContract'])->name('kyc.contrat');
 });
 
 
@@ -74,6 +75,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/withdrawal', [\App\Http\Controllers\wallet\WithdrawViewController::class, 'index'])->name('withdrawal.index');
     Route::post('/withdraw', [\App\Http\Controllers\wallet\WithdrawViewController::class, 'store'])->name('withdrawal.store');
     Route::post('/withdraw-otp', [\App\Http\Controllers\wallet\WithdrawViewController::class, 'confirme'])->name('withdrawal.confirme');
+    Route::get('/withdraw/deleted', [\App\Http\Controllers\wallet\WithdrawViewController::class, 'cancel'])->name('withdrawal.cancel');
 });
 
 //Settings

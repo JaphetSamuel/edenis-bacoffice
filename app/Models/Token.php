@@ -7,10 +7,11 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Spatie\ModelStatus\HasStatuses;
 
 class Token extends Model
 {
-    use HasFactory;
+    use HasFactory,HasStatuses;
 
     protected  $fillable = [
         'tokenable_id',

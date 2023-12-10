@@ -1,54 +1,22 @@
 @extends('layouts.base')
+
+@push('styles')
+
+@endpush
+
 @section('content')
     <section class="content row ">
         {{--        statut --}}
         <div class="col-12 row justify-content-center mb-3">
-            <div class="col-sm-4 col-md-2">
-                <div class="color-palette-set">
-                    <div class="bg-primary color-palette"><h5 class="text-center text-gray-dark">Inscription</h5></div>
-                    <div class="bg-success disabled color-palette"><span>Passed</span></div>
-                </div>
+            <div class="timeline justify-content-center">
+                <!-- Étape 1 -->
+                <x-timeline-item :completed="true" :label="'registered'"></x-timeline-item>
+                <x-timeline-item :completed="$user->etape >= \App\Enums\Etapes::VERIFIE" :label="'confirmed'"></x-timeline-item>
+                <x-timeline-item :completed="$user->status() == 'first_pack'" :label="'KYC'"></x-timeline-item>
+                <x-timeline-item :completed="$user->status() == 'first_pack'" :label="'First pack'"></x-timeline-item>
+                <x-timeline-item :completed="$user->etape >= \App\Enums\Etapes::SIGNED" :label="'signed'"></x-timeline-item>
             </div>
-            <div class="col-sm-4 col-md-2">
-                <div class="color-palette-set">
-                    <div class="bg-primary color-palette"><h5 class="text-center text-gray-dark">Confirmation</h5></div>
-                    @if($user->etape >= \App\Enums\Etapes::VERIFIE)
-                        <div class="bg-success disabled color-palette"><span>Passed</span></div>
-                    @else
-                        <div class="bg-secondary disabled color-palette"><span>Pending</span></div>
-                    @endif
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-2">
-                <div class="color-palette-set">
-                    <div class="bg-primary color-palette"><h5 class="text-center text-gray-dark">KYC</h5></div>
-                    @if($user->status() == 'first_pack')
-                        <div class="bg-success disabled color-palette"><span>Passed</span></div>
-                    @else
-                    <div class="bg-secondary disabled color-palette"><span>Pending</span></div>
-                    @endif
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-2">
-                <div class="color-palette-set">
-                    <div class="bg-primary color-palette"><h5 class="text-center text-gray-dark">Payement</h5></div>
-                    @if($user->status() == 'first_pack')
-                        <div class="bg-success disabled color-palette"><span>Passed</span></div>
-                    @else
-                        <div class="bg-secondary disabled color-palette"><span>Pending</span></div>
-                    @endif
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-2">
-                <div class="color-palette-set">
-                    <div class="bg-primary color-palette"><h5 class="text-center text-gray-dark">Signature</h5></div>
-                    @if($user->etape >= \App\Enums\Etapes::SIGNED)
-                        <div class="bg-success disabled color-palette"><span>Passed</span></div>
-                    @else
-                        <div class="bg-secondary disabled color-palette"><span>Pending</span></div>
-                    @endif
-                </div>
-            </div>
+
         </div>
 
         <div class="col-lg-3 col-6">

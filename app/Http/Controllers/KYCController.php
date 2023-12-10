@@ -54,4 +54,9 @@ class KYCController extends Controller
     {
         //
     }
+
+    public function showContract()
+    {
+        return view('modules.KYC.contrat');
+    }
 }
