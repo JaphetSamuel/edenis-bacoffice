@@ -11,6 +11,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class WithdrawalResource extends Resource
@@ -45,16 +46,18 @@ class WithdrawalResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('portefeuille_id')
-                    ->numeric()
+                Tables\Columns\TextColumn::make('portefeuille.user.allName()')
+                    ->label('Name')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('amount')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('model_status')
+                Tables\Columns\TextColumn::make('status()')
                     ->label('status')
-                    ->formatStateUsing(fn(Withdrawal $withdrawal) => $withdrawal->status)
-                    ->badge(fn(Withdrawal $withdrawal) => match ($withdrawal->status) {
+                    ->state(function(Model $record){
+                        return $record->status;
+                    })
+                    ->badge(fn(string $state) => match ($state) {
                         'pending' => 'primary',
                         'paid' => 'success',
                         'rejected' => 'danger',
@@ -85,14 +88,16 @@ class WithdrawalResource extends Resource
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\Action::make('approve')
                 ->label('Approve')
-                ->action(fn (Withdrawal $withdrawal) => $withdrawal->setStatus('approved')),
+                ->action(fn (Withdrawal $withdrawal) => $withdrawal->setStatus('approved'))
+                ->visible(fn (Withdrawal $withdrawal) => $withdrawal->status === 'pending'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                     Tables\Actions\BulkAction::make('approve')
+                        ->color('#22c55e')
+                        ->icon('heroicon-o-check-circle')
                         ->label('Approve')
-                        ->action(fn (Withdrawal $withdrawal) => $withdrawal->setStatus('approved')),
                 ]),
             ])
             ->emptyStateActions([
