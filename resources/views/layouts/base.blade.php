@@ -35,7 +35,7 @@
                 <a href="{{route('dash')}}" class="nav-link text-gray-dark text-bold border-info">Dashboard</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="{{route('kyc.create')}}" class="nav-link text-gray-dark text-bold border-info">KYC</a>
+                <a href="{{route('kyc.form')}}" class="nav-link text-gray-dark text-bold border-info">KYC</a>
             </li>
 
             <li class="nav-item d-none d-sm-inline-block">

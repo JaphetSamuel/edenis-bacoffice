@@ -43,7 +43,9 @@ Route::resource('packs', \App\Http\Controllers\Pack\PackController::class);
 // KYC
 Route::middleware(['auth', 'verified'])->group(function (){
     Route::get('/kyc/create', \App\Livewire\KycForm::class)->name('kyc.create');
-    Route::get('/kyc/contrat', [\App\Http\Controllers\KYCController::class, 'showContract'])->name('kyc.contrat');
+    Route::any('/kyc/contrat', [\App\Http\Controllers\KYCController::class, 'showContract'])->name('kyc.contrat');
+    Route::get('/kyc/form', [\App\Http\Controllers\KYCController::class, 'index'])->name('kyc.form');
+    Route::post('/kyc/form', [\App\Http\Controllers\KYCController::class, 'store'])->name('kyc.store');
 });
 
 

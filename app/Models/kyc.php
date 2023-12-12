@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class kyc extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'nom',
         'prenom',
@@ -35,11 +37,16 @@ class kyc extends Model
 
     public function save(array $options = [])
     {
-        $this->user_id = auth()->user()->id;
+//        $this->user_id = auth()->user()->id;
         // convert to base64
         $this->signature = 'null';
         return parent::save($options);
     }
 
-    use HasFactory;
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
 }

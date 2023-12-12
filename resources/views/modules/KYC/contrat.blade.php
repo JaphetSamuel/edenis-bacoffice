@@ -27,7 +27,7 @@
                 <h2 class="text-primary">Signature</h2>
                 <div class="card">
                     <div class="card-body">
-                        <canvas id="signatureCanvas" width="600" height="200"></canvas>
+                        <canvas id="signatureCanvas" width="600" height="200" class="bg-white"></canvas>
                     </div>
                 </div>
 
@@ -36,7 +36,10 @@
 
                 <!-- Bouton pour effacer la signature -->
                 <button class="btn btn-danger mt-3 ml-2 text-gray-dark" onclick="clearSignature()">Erase SIgnature</button>
-
+                <form action="#" method="post" id="forms">
+                    @csrf
+                    <input type="hidden" name="signature" id="signature">
+                </form>
             </div>
         </div>
     </div>
@@ -58,8 +61,13 @@
             } else {
                 // Obtenir l'image sous forme de données URL
                 var signatureDataURL = signaturePad.toDataURL();
-                // Vous pouvez utiliser signatureDataURL pour l'envoyer au serveur ou pour toute autre utilisation nécessaire.
-                console.log('Signature sauvegardée:', signatureDataURL);
+
+                var forms = document.getElementById('forms');
+                var signature = document.getElementById('signature');
+
+                signature.value = signatureDataURL;
+                console.log(signature.value);
+                forms.submit();
 
 
                 // Réinitialiser la zone de signature après sauvegarde
