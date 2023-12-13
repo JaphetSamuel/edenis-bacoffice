@@ -136,7 +136,7 @@
                 </div>
                 <ul class="timeline">
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
+                        <div class="timeline-image"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2022-2024</h4>
@@ -146,7 +146,7 @@
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
+                        <div class="timeline-image"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>March 2024</h4>
@@ -156,7 +156,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
+                        <div class="timeline-image"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>December 2024</h4>
@@ -166,7 +166,7 @@
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
+                        <div class="timeline-image"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2025 - 2027</h4>
