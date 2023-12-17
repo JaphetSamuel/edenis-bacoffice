@@ -42,7 +42,7 @@
         <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading">Welcome To a great project!</div>
-                <div class="masthead-heading text-uppercase">We are connecting africa</div>
+                <div class="masthead-heading text-uppercase">Innovation at the service of African companies</div>
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
             </div>
         </header>
@@ -277,8 +277,8 @@
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="landing/assets/img/team/huguet.jpg" alt="..." />
-                            <h4>Huguette Akplogan Dossa</h4>
-                            <p class="text-muted">coordinator of Edenis think tank</p>
+                            <h4>Huguette AKPLOGAN DOSSA</h4>
+                            <p class="text-muted">Coordinator of EEDENIS THINK TANK</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         </div>
@@ -287,7 +287,7 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="landing/assets/img/team/sheila.jpg" alt="..." />
                             <h4>Diane Shella IBINGA</h4>
-                            <p class="text-muted">coordinator of Edenis foundation</p>
+                            <p class="text-muted">coordinator of EDENIS FOUNDATION</p>
 
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
