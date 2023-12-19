@@ -36,9 +36,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::post('/packs/achat', \App\Http\Controllers\ValidationAchatPack::class)->name('packs.achat');
+Route::post('/packs/achat', \App\Http\Controllers\ValidationAchatPack::class)
+    ->middleware('auth')
+    ->name('packs.achat');
 
-Route::resource('packs', \App\Http\Controllers\Pack\PackController::class);
+Route::resource('packs', \App\Http\Controllers\Pack\PackController::class)
+->middleware('auth');
 
 // KYC
 Route::middleware(['auth', 'verified'])->group(function (){

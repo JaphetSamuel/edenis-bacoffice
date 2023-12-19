@@ -193,7 +193,6 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase text-white">Join Us</h2>
-                    <h3 class="section-subheading text-muted text-white">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <div class="row">
                     <!-- Pricing Card 1 -->
@@ -201,7 +200,6 @@
                         <div class="pricing-card text-white">
                             <h3>VVIP</h3>
                             <p>10201 USD</p>
-                            <button class="btn btn-lg btn-block">Choose Plan</button>
                         </div>
                     </div>
 
@@ -210,7 +208,6 @@
                         <div class="pricing-card featured text-white">
                             <h3>PIONNIER</h3>
                             <p>1210 USD</p>
-                            <button class="btn btn-lg btn-block">Choose Plan</button>
                         </div>
                     </div>
 
@@ -219,7 +216,6 @@
                         <div class="pricing-card text-white">
                             <h3>INVESTOR</h3>
                             <p>105 USD</p>
-                            <button class="btn btn-lg btn-block">Choose Plan</button>
                         </div>
                     </div>
 
@@ -228,7 +224,6 @@
                         <div class="pricing-card text-white">
                             <h3>VIP</h3>
                             <p>5105 USD</p>
-                            <button class="btn btn-lg btn-block">Choose Plan</button>
                         </div>
                     </div>
 
@@ -237,7 +232,6 @@
                         <div class="pricing-card text-white">
                             <h3>JUNIOR</h3>
                             <p>605 USD</p>
-                            <button class="btn btn-lg btn-block">Choose Plan</button>
                         </div>
                     </div>
 
@@ -246,8 +240,10 @@
                         <div class="pricing-card text-white">
                             <h3>STARTER</h3>
                             <p>35 USD</p>
-                            <button class="btn btn-lg btn-block">Choose Plan</button>
                         </div>
+                    </div>
+                    <div class="offset-md-4 col-md-4 mt-2" style="text-align: center" >
+                        <a href="{{ route('packs.achat') }}" class="btn btn-lg btn-block bg-primary text-gray-dark">Choose Plan</a>
                     </div>
                 </div>
             </div>
@@ -278,7 +274,7 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="landing/assets/img/team/huguet.jpg" alt="..." />
                             <h4>Huguette AKPLOGAN DOSSA</h4>
-                            <p class="text-muted">Coordinator of EEDENIS THINK TANK</p>
+                            <p class="text-muted">Coordinator of EDENIS THINK TANK</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         </div>
