@@ -139,40 +139,70 @@
                         <div class="timeline-image"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2022-2024</h4>
-                                <h4 class="subheading">Our Humble Beginnings</h4>
+                                <h4>2023-2024</h4>
+                                <h4 class="subheading">Pre-launch</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">
+                                    -Opening of our website
+                                    (EDENIS GROUP) and the
+                                    Shareholders' platform
+                                    (EDENIS PARTNERS)
+                                    followed by the BIG
+                                    PROMOTION
+                                    Registration of our
+                                    CARE-PEOPLE EIG
+                                </p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>March 2024</h4>
-                                <h4 class="subheading">Edenis first 3 projects</h4>
+                                <h4>2024-2025</h4>
+                                <h4 class="subheading">Launching</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">
+                                    -Opening of the
+                                    provisional
+                                    headquarters in
+                                    Tanzania
+                                    - Construction of
+                                    websites and
+                                    applications
+                                    EDENIS MARKET EDENIS
+                                    PAY EDENIS DELIVERY
+                                </p></div>
                         </div>
                     </li>
                     <li>
                         <div class="timeline-image"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>December 2024</h4>
-                                <h4 class="subheading">Transition to Full Service</h4>
+                                <h4>2025-2026</h4>
+                                <h4 class="subheading">Opening of three projects</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">
+                                    -Deployment of logistics
+                                    installation of national
+                                    Franchises
+                                    -Launch applications
+                                    Deployment of 10 EDENIS
+                                    brands
+                                </p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2025 - 2027</h4>
-                                <h4 class="subheading">Phase Two Expansion</h4>
+                                <h4>2027-2028</h4>
+                                <h4 class="subheading">Payment of 1st dividends</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">
+                                    Deployment of other
+                                    ecosystem projects
+                                    EDENIS
+                                </p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
