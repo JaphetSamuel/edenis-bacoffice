@@ -41,6 +41,10 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
+                <video autoplay muted loop>
+                    <source src="/landing/assets/vid.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
                 <div class="masthead-subheading">Welcome To a great project!</div>
                 <div class="masthead-heading text-uppercase">Innovation at the service of African companies</div>
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
@@ -51,32 +55,65 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Our vision</h2>
-                    <h3 class="section-subheading text-muted">Our vision in 3 main keys</h3>
+                    <h3 class="section-subheading text-muted">Why join Edenis</h3>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-hand-holding fa-stack-1x fa-inverse"></i>
+                            <i class="fas fa-map-pin fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">Empower</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <h4 class="my-3">Local expertise</h4>
+                        <p class="text-muted"> EDENIS GROUP is run by Africans who know the
+                            African market and its specificities</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-chart-line fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">African Growth</h4>
+                        <p class="text-muted">
+                             Africa is experiencing sustained economic growth,
+                            offering many investment opportunities.
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas  fa-project-diagram  fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Sectoral diversification</h4>
+                        <p class="text-muted">
+                             EDENIS GROUP is active in several growth
+                            sectors, allowing diversification of the investment portfolio.
+                        </p>
+                    </div>
+                    <div class="col-lg-2"></div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-people-arrows fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Social impact</h4>
+                        <p class="text-muted">
+                             EDENIS GROUP undertakes to contribute to the
+                            economic and social development of Africa by making each
+                            Shareholder an Entrepreneur, creating jobs and promoting sustainable
+                            development
+                        </p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-building fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">Build</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-people-arrows fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Share</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <h4 class="my-3">African transformation</h4>
+                        <p class="text-muted">
+                             Investing in EDENIS GROUP supports a vision of
+                            African autonomy and prosperity, where Africans are the leaders in the
+                            development of the continent
+                        </p>
                     </div>
                 </div>
             </div>
@@ -86,7 +123,6 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Our main Projects</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
@@ -132,7 +168,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Our plan</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted"></h3>
                 </div>
                 <ul class="timeline">
                     <li>
@@ -155,7 +191,9 @@
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"></div>
+                        <div class="timeline-image text-gray-dark">
+
+                        </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2024-2025</h4>
@@ -285,7 +323,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted"></h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
@@ -305,7 +343,7 @@
                             <img class="mx-auto rounded-circle" src="landing/assets/img/team/huguet.jpg" alt="..." />
                             <h4>Huguette AKPLOGAN DOSSA</h4>
                             <p class="text-muted">Coordinator of EDENIS THINK TANK</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label=" Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
@@ -315,8 +353,8 @@
                             <h4>Diane Shella IBINGA</h4>
                             <p class="text-muted">coordinator of EDENIS FOUNDATION</p>
 
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Sheila Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/diane-geffroy-ibinga-41a321166/" aria-label="Sheila LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
@@ -325,7 +363,7 @@
         <!-- Clients-->
 
         <!-- Footer-->
-        <footer class="footer py-4">
+        <footer class="footer py-4 bg-white">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-lg-start">Copyright &copy; Edenis Labs 2023</div>
@@ -341,8 +379,9 @@
                 </div>
             </div>
         </footer>
+
         <!-- Portfolio Modals-->
-        <!-- Portfolio item 1 modal popup-->
+        <!-- Portfolio item 1 modal popup
         <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -351,7 +390,6 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
-                                    <!-- Project details-->
                                     <h2 class="text-uppercase">Project Name</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
@@ -377,7 +415,7 @@
                 </div>
             </div>
         </div>
-        <!-- Portfolio item 2 modal popup-->
+
         <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -386,7 +424,6 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
-                                    <!-- Project details-->
                                     <h2 class="text-uppercase">Project Name</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
@@ -412,7 +449,6 @@
                 </div>
             </div>
         </div>
-        <!-- Portfolio item 3 modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -421,7 +457,6 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
-                                    <!-- Project details-->
                                     <h2 class="text-uppercase">Project Name</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
@@ -447,7 +482,6 @@
                 </div>
             </div>
         </div>
-        <!-- Portfolio item 4 modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -456,7 +490,6 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
-                                    <!-- Project details-->
                                     <h2 class="text-uppercase">Project Name</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
@@ -482,7 +515,6 @@
                 </div>
             </div>
         </div>
-        <!-- Portfolio item 5 modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -491,7 +523,6 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
-                                    <!-- Project details-->
                                     <h2 class="text-uppercase">Project Name</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
@@ -517,7 +548,6 @@
                 </div>
             </div>
         </div>
-        <!-- Portfolio item 6 modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -526,7 +556,6 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
-                                    <!-- Project details-->
                                     <h2 class="text-uppercase">Project Name</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
@@ -552,6 +581,7 @@
                 </div>
             </div>
         </div>
+        -->
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

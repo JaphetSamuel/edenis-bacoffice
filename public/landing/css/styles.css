@@ -10947,7 +10947,7 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/header-bg.jpg");
+  /*background-image: url("../assets/img/header-bg.jpg");*/
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -11345,4 +11345,19 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 .pricing-card.featured h3 {
     font-size: 28px;
+}
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height:auto;
+    z-index: -1;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+section {
+    background-color: #ffffff;
 }
