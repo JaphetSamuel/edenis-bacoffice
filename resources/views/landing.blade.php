@@ -351,7 +351,7 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="landing/assets/img/team/sheila.jpg" alt="..." />
                             <h4>Diane Shella IBINGA</h4>
-                            <p class="text-muted">coordinator of EDENIS FOUNDATION</p>
+                            <p class="text-muted">Coordinator of EDENIS FOUNDATION</p>
 
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Sheila Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/diane-geffroy-ibinga-41a321166/" aria-label="Sheila LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
