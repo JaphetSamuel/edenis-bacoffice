@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -10,7 +11,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\ModelStatus\HasStatuses;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
     use HasStatuses;
@@ -59,6 +60,14 @@ class User extends Authenticatable
         return $this->hasOne(Portefeuille::class);
     }
 
+    public function createPortefeuille()
+    {
+        $this->portefeuille()->create([
+            'user_id' => $this->id,
+            'solde' => 0,
+        ]);
+    }
+
     public function parrain()
     {
         return $this->belongsTo(User::class, 'parrain_id');
@@ -80,7 +89,8 @@ class User extends Authenticatable
         $this->save();
     }
 
-    public function allName(){
+    public function allName()
+    {
         return $this->name . ' ' . $this->lastname;
     }
 

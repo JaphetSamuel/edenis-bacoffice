@@ -61,10 +61,7 @@ class RegisteredUserController extends Controller
         $user->genererCodeParrain();
 
         // generation du portefeuille
-        Portefeuille::create([
-            'user_id' => $user->id,
-            'solde' => 0,
-        ]);
+        $user->createPortefeuille();
 
         event(new Registered($user));
 
