@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand" href="#page-top"><img src="images/LOGOEDENIS.png" alt="..." />
-                EDENIS PARTNERS </a>
+                EDENIS PARTNERS <br/> <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; People’s legacy</h6> </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -54,8 +54,8 @@
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Our vision</h2>
-                    <h3 class="section-subheading text-muted">Why join Edenis</h3>
+                    <h2 class="section-heading text-uppercase">Why join Edenis</h2>
+                    <h3 class="section-subheading text-muted">5 reasons to join  EDENIS GROUP</h3>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4">
@@ -172,10 +172,18 @@
                 </div>
                 <ul class="timeline">
                     <li>
-                        <div class="timeline-image"></div>
+                        <div class="timeline-image">
+                            <h3>
+                                <br>
+                                2023
+                                <br/>
+                                -
+                                <br />
+                                2024
+                            </h3>
+                        </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2023-2024</h4>
                                 <h4 class="subheading">Pre-launch</h4>
                             </div>
                             <div class="timeline-body"><p class="text-muted">
@@ -191,12 +199,18 @@
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image text-gray-dark">
-
+                        <div class="timeline-image">
+                            <h3>
+                                <br>
+                                2024
+                                <br/>
+                                -
+                                <br />
+                                2025
+                            </h3>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2024-2025</h4>
                                 <h4 class="subheading">Launching</h4>
                             </div>
                             <div class="timeline-body"><p class="text-muted">
@@ -213,10 +227,18 @@
                         </div>
                     </li>
                     <li>
-                        <div class="timeline-image"></div>
+                        <div class="timeline-image">
+                            <h3>
+                                <br>
+                                2025
+                                <br/>
+                                -
+                                <br />
+                                2026
+                            </h3>
+                        </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2025-2026</h4>
                                 <h4 class="subheading">Opening of three projects</h4>
                             </div>
                             <div class="timeline-body"><p class="text-muted">
@@ -230,10 +252,18 @@
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"></div>
+                        <div class="timeline-image">
+                            <h3>
+                                <br>
+                                2027
+                                <br/>
+                                -
+                                <br />
+                                2028
+                            </h3>
+                        </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2027-2028</h4>
                                 <h4 class="subheading">Payment of 1st dividends</h4>
                             </div>
                             <div class="timeline-body"><p class="text-muted">
@@ -267,7 +297,7 @@
                     <div class="col-md-4 mb-2">
                         <div class="pricing-card text-white">
                             <h3>VVIP</h3>
-                            <p>10201 USD</p>
+                            <p>10210 USD</p>
                         </div>
                     </div>
 
