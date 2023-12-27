@@ -173,14 +173,13 @@
                 <ul class="timeline">
                     <li>
                         <div class="timeline-image">
-                            <h3>
-                                <br>
+                            <h4>
                                 2023
                                 <br/>
                                 -
                                 <br />
                                 2024
-                            </h3>
+                            </h4>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -200,14 +199,13 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <h3>
-                                <br>
+                            <h4>
                                 2024
                                 <br/>
                                 -
                                 <br />
                                 2025
-                            </h3>
+                            </h4>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -228,14 +226,13 @@
                     </li>
                     <li>
                         <div class="timeline-image">
-                            <h3>
-                                <br>
+                            <h4>
                                 2025
                                 <br/>
                                 -
                                 <br />
                                 2026
-                            </h3>
+                            </h4>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -253,14 +250,14 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <h3>
-                                <br>
+                            <h4>
+
                                 2027
                                 <br/>
                                 -
                                 <br />
                                 2028
-                            </h3>
+                            </h4>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
