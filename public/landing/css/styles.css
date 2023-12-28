@@ -11211,6 +11211,7 @@ header.masthead .masthead-heading {
     margin-left: -75px;
   }
   .timeline > li .timeline-image h4, .timeline > li .timeline-image .h4 {
+      color: black;
     font-size: 18px;
     line-height: 26px;
     margin-top: 30px;
