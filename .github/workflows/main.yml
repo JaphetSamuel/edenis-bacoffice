@@ -14,4 +14,4 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: public_html/sites/backoffice/
+          server-dir: /var/www/edenispartners.com/web
