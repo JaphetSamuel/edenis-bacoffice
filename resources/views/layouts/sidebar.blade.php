@@ -26,8 +26,15 @@
                     <a href="{{route('network.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
-                            Network
-
+                            {{__('Network')}}
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('packs.create') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tag"></i>
+                        <p>
+                            {{__('Purchase')}}
                         </p>
                     </a>
                 </li>
@@ -53,14 +60,6 @@
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Withdraw
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('packs.create') }}" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
-                                <p>
-                                    Package
                                 </p>
                             </a>
                         </li>

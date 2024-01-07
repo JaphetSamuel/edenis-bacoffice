@@ -5,6 +5,7 @@ namespace App\Helpers;
 use App\Enums\TransactionSens;
 use App\Enums\TransactionStatus;
 use App\Enums\TransactionType;
+use App\Models\AchatPack;
 use App\Models\Portefeuille;
 use App\Models\Transaction;
 use App\Models\Withdrawal;
@@ -28,8 +29,14 @@ class TransactionHelper
 
         $user = auth()->user();
 
-        return  new Transaction([
+        AchatPack::create([
+            'pack_id' => $pack->id,
+            'user_id' => $user->id,
+            'quantite' => $pack->quantite,
+            'status' => 1
+        ]);
 
+        return  new Transaction([
             'type' => TransactionType::ACHAT,
             'montant' => $montant,
             'status' => TransactionStatus::EN_ATTENTE,

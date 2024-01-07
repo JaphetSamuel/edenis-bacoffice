@@ -19,6 +19,13 @@
 
         </div>
 
+{{--        <div class="row col-12">--}}
+{{--            <div class="col-lg-8 col-12">--}}
+{{--                <video src="https://www.youtube.com/watch?v=NphLGJ4IQhk" autoplay width="500" height="400" crossorigin=""></video>--}}
+{{--            </div>--}}
+{{--            @include('modules.widgets.pack-stats')--}}
+{{--        </div>--}}
+
         <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-primary text-gray-dark">
@@ -39,7 +46,7 @@
             <div class="small-box bg-primary text-gray-dark">
                 <div class="inner">
                     <h3>
-                        {{$user->portefeuille->titres ?? 0}}
+                        {{$user->packs()->count() ?? 0}}
                     </h3>
                     <p>Number of pack</p>
                 </div>

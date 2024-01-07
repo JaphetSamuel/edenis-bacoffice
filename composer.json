@@ -18,6 +18,7 @@
         "saade/filament-autograph": "^3.0",
         "simplesoftwareio/simple-qrcode": "^4.2",
         "spatie/laravel-model-status": "^1.14",
+        "srmklive/paypal": "~3.0",
         "stripe/stripe-php": "^13.3"
     },
     "require-dev": {

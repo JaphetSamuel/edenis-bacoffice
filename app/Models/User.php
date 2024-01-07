@@ -102,4 +102,9 @@ class User extends Authenticatable implements MustVerifyEmail
         ]);
     }
 
+    public function packs()
+    {
+        return $this->hasMany(AchatPack::class);
+    }
+
 }

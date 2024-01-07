@@ -19,7 +19,7 @@
             {{ route('register', ['code' => $user->parrain_code]) }}
         </span>
         <button class=" bg-primary rounded px-4 py-1 text-gray-dark dark:text-gray-100"
-                onClick="navigator.clipboard.writeText(`{{ route('register', ['code' => $user->parrain_code]) }}`);;alert('copié')">
+                onClick="navigator.clipboard.writeText(`{{ route('register', ['code' => $user->parrain_code]) }}`);;alert('copied')">
             {{ __('Copy') }}
         </button>
     </div>

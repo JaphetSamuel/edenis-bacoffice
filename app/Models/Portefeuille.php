@@ -40,8 +40,7 @@ class Portefeuille extends Model
         $credit = $this->transactions()
             ->where('sens', TransactionSens::CREDIT)
             ->where('status',  TransactionStatus::ACCEPTEE)
-            ->sum('montant');
-
+           ->sum('montant');
         return $credit - $debit;
     }
 

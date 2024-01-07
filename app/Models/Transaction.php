@@ -72,7 +72,4 @@ class Transaction extends Model
         $this->hash = uniqid("trx_");
     }
 
-
-
-
 }

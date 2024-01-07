@@ -47,7 +47,7 @@
 
                             </header>
 
-                            <form action="{{ route('packs.achat') }}" method="post">
+                            <form action="{{ route('packs.achat') }}" method="post" id="packForm">
                                 @csrf
 
                                 <div class="row">
@@ -71,28 +71,44 @@
 
                                 <div class="col-sm-12 col-md-3">
                                     <x-input-label for="quantite" :value="__('Quantity')"/>
-                                    <input class="form-control form-control-lg " name="quantite" type="number"
-                                           placeholder="">
+                                    <input required id="quantite" class="form-control form-control-lg " name="quantite" type="number"
+                                           placeholder="" min="1" max="10">
                                     <x-input-error class="mt-2" :messages="$errors->get('quantite')"/>
                                 </div>
 
                                 <input type="hidden" name="user_id" value="{{ $user->id }}">
-
-                                <x-primary-button class="mt-2 text-md" name="meth" value="card"
-                                                  style="width: 200px!important; color: #1a202c !important; text-align: center;background-color: #FDD85D !important;"
-                                >{{ __('Pay with Card') }}</x-primary-button>
-
-                                <x-primary-button class="mt-2 text-md ml-2" name="meth" value="crypto"
-                                                  style="width: 200px!important; color: #1a202c !important; text-align: center;background-color: #FDD85D !important;"
-                                >{{ __('Pay with Crypto') }}</x-primary-button>
-
                             </form>
+                            <x-primary-button id="paypalBtn" class="mt-2 text-md" name="meth" value="card"
+                                              style="width: 200px!important; color: #1a202c !important; text-align: center;background-color: #FDD85D !important;"
+                            >{{ __('Pay with Paypal') }}</x-primary-button>
+
+                            <x-primary-button id="cryptoBtn" class="mt-2 text-md ml-2" name="meth" value="crypto"
+                                              style="width: 200px!important; color: #1a202c !important; text-align: center;background-color: #FDD85D !important;"
+                            >{{ __('Pay with Crypto') }}</x-primary-button>
                         </section>
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+            function SubmitPayment(url) {
+                var packForm = document.getElementById('packForm');
+                packForm.action = url;
+                packForm.submit();
+            }
 
+            var paypalBtn = document.getElementById('paypalBtn');
+            paypalBtn.addEventListener('click',(e)=>{
+                e.preventDefault();
+                SubmitPayment("{{ route('processTransaction') }}");
+            });
+
+            var cryptoBtn = document.getElementById('cryptoBtn');
+            cryptoBtn.addEventListener('click',(e)=>{
+                e.preventDefault();
+                SubmitPayment("{{ route('packs.achat') }}");
+            });
+        </script>
 
     </section>
 @endsection
