@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Session;
 use Ramsey\Uuid\Type\Integer;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
-class PaypalController extends Controller
+class PayPalController extends Controller
 {
     public function createTransaction()
     {
